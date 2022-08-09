@@ -1,0 +1,36 @@
+
+.landing {
+    background:
+        /* top, transparent black, faked with gradient */ 
+        linear-gradient(
+          rgba(0, 0, 0, 0.7), 
+          rgba(0, 0, 0, 0.7)
+        ),
+        /* bottom, image */
+        url("../imgs/cover.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.heading {
+    position: absolute;
+    left: 15%;
+    top: 15%;
+    color: #ffffff;
+    display: inline-block;
+}
+
+h1 {
+    font-size: 90px;
+    color: white;
+    padding: 0px;
+    margin: 0px;
+    line-height: 90px;
+}
+
+h2 {
+    font-size: 2em;
+    color: white;    
+}
