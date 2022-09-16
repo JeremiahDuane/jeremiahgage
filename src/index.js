@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Software from './Software/App';
 import Nav from './Nav/App';
-import Food from './Software/App';
+import Food from './Food/App';
 import reportWebVitals from './Test/reportWebVitals';
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 

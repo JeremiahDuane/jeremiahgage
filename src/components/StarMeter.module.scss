@@ -1,0 +1,31 @@
+.starMeter {
+    width: 330px;
+    height: 100px;
+}
+
+.fill {
+    background-color: yellow;
+    height: 92px;
+    margin-top: 5px;
+}
+
+.overlay__wrapper {
+    position: absolute;
+    height: 92px;
+    top: 30px;
+    width: 330px;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    height: 100px;
+    top: -5px;
+    left: -2px;
+    width: 334px;
+    overflow: hidden;
+}
+
+svg {
+    filter: drop-shadow(2px 2px 2px rgb(0 0 0 / 0.4));
+}

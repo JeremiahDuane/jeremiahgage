@@ -31,7 +31,7 @@ function Landing() {
                 </div>
             </div>
             <div id={styles.splitPaneOr}>
-                <Anchor color="#222222" width/>
+                <Anchor color="#222222"/>
             </div>
         </>
     );
@@ -39,3 +39,4 @@ function Landing() {
 
 
 export default Landing;
+
