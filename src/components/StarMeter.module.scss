@@ -6,22 +6,27 @@
 .fill {
     background-color: yellow;
     height: 5vh;
+    width: 25vh;
+    position: relative;
+    z-index: 1;
 }
 
 .overlay__wrapper {
-    position: absolute;
-    height: 7vh;
-    top: 4vh;
-    width: 30vh;
+    height: 5vh;
+    width: 25vh;
     overflow: hidden;
+    position: relative;
+    z-index: 2;
+    top: -5vh;
 }
 
 .overlay {
-    position: absolute;
-    top: -1px;
-    left: -1px;
     width: 25vh;
     overflow: hidden;
+    position: relative;
+    z-index: 2;
+    top: -10px;
+    left: -1px;
 }
 
 svg {

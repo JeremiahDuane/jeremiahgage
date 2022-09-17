@@ -27,9 +27,11 @@
     top: 27vh;
     h1 {
         color: black;
-        font-size: 36px;
+        font-size: 24px;
+        line-height: 4vh;
+        padding: 2vh;
         @media(max-width: 700px) {
-            font-size: 24px;
+            font-size: 20px;
         }
         @media(max-width: 500px) {
             font-size: 16px;
@@ -38,11 +40,11 @@
 }
 
 p {
-    font-size: 24px;
+    font-size: 20px;
     padding-top: 1vh;
-    height: 14vh;
+    height: 12vh;
     @media(max-width: 700px) {
-        font-size: 20px;
+        font-size: 18px;
     }
     @media(max-width: 500px) {
         font-size: 16px;
@@ -79,8 +81,9 @@ meter {
         -moz-border-radius: 5px;
         -webkit-border-radius: 5px;
         border-radius: 5px;
-        width: 20em;
+        width: 100%;
         padding: 0.7em;
+        margin-bottom: 1vh;
         font-size: 0.5em;
         -moz-transition: all 0.2s ease-out;
         -o-transition: all 0.2s ease-out;
