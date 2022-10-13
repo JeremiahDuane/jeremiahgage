@@ -1,16 +1,18 @@
 import { useEffect } from 'react'
 import styles from './Career.module.scss'
+import FlipCard from '../components/FlipCard.js'
 
 function Career() {
     return (
         <div className={styles.row}>
-            <div className={[styles.column, styles.overview].join(" ")}>
-                <h2>Column 1</h2>
-                <p>Some text..</p>
-            </div>
-            <div className={[styles.column, styles.photo].join(" ")}>
-                <img width="100%" src={require("../imgs/cover.jpg")}/>
-            </div>
+            <FlipCard>
+                <div className={[styles.card, styles.front].join(" ")}>
+                    Front
+                </div>
+                <div className={[styles.card, styles.back].join(" ")}>
+                    Back
+                </div>
+            </FlipCard>
         </div>
     );
 }
