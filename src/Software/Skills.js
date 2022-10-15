@@ -17,8 +17,8 @@ function Skills() {
                 var asyncResponse;
                 var config = {
                     method: 'get',
-                    url: 'https://api.github.com/users/JeremiahDuane/repos',
-                    auth: "",
+                    url: config.github.api_url + 'users/JeremiahDuane/repos',
+                    auth: config.github.api_auth,
                     cancelToken: cancelTokenSource.token,
                 };
                 
@@ -35,7 +35,7 @@ function Skills() {
                     config = {
                         method: 'get',
                         url: url,
-                        auth: "",
+                        auth: config.github.api_auth,
                         cancelToken: cancelTokenSource.token,
                     };
                     asyncResponse = await axios(config);
@@ -93,8 +93,8 @@ function Skills() {
                 <div className={[styles.card, styles.back].join(" ")}>
                     Back
                     <div className={styles.github}>
-                        Look at the code: <a target="_blank" href={config.github_url + "/blob/master/src/Software/Skills.js"}>
-                            {config.github_url + "/blob/master/src/Software/Skills.js"}
+                        Look at the code: <a target="_blank" href={config.github.site_url + "/blob/master/src/Software/Skills.js"}>
+                            {config.github.site_url + "/blob/master/src/Software/Skills.js"}
                         </a>
                     </div>
                 </div>
