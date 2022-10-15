@@ -8,7 +8,7 @@ function App() {
             <SinglePageNav>
                 <Landing header="Home"/>
                 <Skills header="Skills"/>
-                <div header="TBD" style={{textAlign:'center', padding:'25%'}}><h1>Coming soon.</h1></div>
+                {/* <div header="TBD" style={{textAlign:'center', padding:'25%'}}><h1>Coming soon.</h1></div> */}
             </SinglePageNav>
         </>
     );
