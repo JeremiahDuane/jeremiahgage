@@ -3,61 +3,44 @@ import styles from './Skills.module.scss'
 import FlipCard from '../components/FlipCard.js'
 import axios, { CancelToken } from "axios";
 import CircleMeter from "../components/CircleMeter"
-import config from '../config';
+import cfg from '../config';
+import { Octokit, App } from "octokit";
 
 function Skills() {
     var [languages, setLanguages] = useState([]);
-    const [refreshKey, setRefreshKey] = useState(0);
+    var [refresh, setRefresh] = useState(0);
 
     useEffect(() => {
         const cancelTokenSource = CancelToken.source();
     
         async function loadSkills() {
             try {
-                var asyncResponse;
-                var config = {
-                    method: 'get',
-                    url: config.github.api_url + 'users/JeremiahDuane/repos',
-                    auth: config.github.api_auth,
-                    cancelToken: cancelTokenSource.token,
-                };
+                const octokit = new Octokit({
+                    auth: cfg.github.api_auth
+                });
+                var asyncResponse = await octokit.request(cfg.github.api_url + '/users/JeremiahDuane/repos');
                 
-                languages = [];
-                asyncResponse = await axios(config);
-                const urls = [];
-                asyncResponse.data.map((repo) => {
-                    if (repo.id == 270893091) return;
-                    urls.push(repo.languages_url)
-                    console.log(repo)
-                })
-
-                urls.map(async(url, index) => {
-                    config = {
-                        method: 'get',
-                        url: url,
-                        auth: config.github.api_auth,
-                        cancelToken: cancelTokenSource.token,
-                    };
-                    asyncResponse = await axios(config);
-                    const json = asyncResponse.data
-                    for (var prop in json) {
-                        if (
-                            !languages.some(item => {
-                                var retVal = item.name == prop
-                                if (retVal) {
-                                    item.value += json[prop]
-                                }
-                                return retVal
-                            }) 
-                        ) {
-
-                            languages.push({name : prop, value : json[prop]});
-                        }
-                    } 
-
-                    if (index == urls.length-1) {
-                        setLanguages(languages)
-                    }
+                asyncResponse.data.map(async(repo) => {
+                    // this repo is primarily auto-generated code, and is not applicable to this query
+                    if (repo.id === 270893091) return;
+                    
+                    await octokit.request(repo.languages_url).then((response) => {
+                        for (var prop in response.data) {
+                            if (
+                                !languages.some(item => {
+                                    var retVal = item.name === prop
+                                    if (retVal) {
+                                        item.value += response.data[prop]
+                                    }
+                                    return retVal
+                                }) 
+                            ) {
+    
+                                languages.push({name : prop, value : response.data[prop]});
+                            }
+                        }                         
+                        setRefresh(languages.length)
+                    });        
                 })
             } catch (err) {
                 if (axios.isCancel(err)) {
@@ -70,12 +53,12 @@ function Skills() {
         loadSkills();
     
         return () => {
-          // here we cancel preveous http request that did not complete yet
+          // here we cancel the previous in-flight, unfinished http request
           cancelTokenSource.cancel(
             "Cancelling previous http call because a new one was made ;-)"
           );
         };
-    }, [refreshKey]);
+    }, [refresh]);
     
     return (
         <div className={styles.row}>
@@ -85,16 +68,13 @@ function Skills() {
                         const sum = languages.reduce((accumulator, object) => {
                             return accumulator + object.value;
                         }, 0);
-                        return <>
-                            <CircleMeter key={idx} value={(item.value)/sum} name={item.name}/>
-                        </>
+                        return <CircleMeter key={idx} value={(item.value)/sum} name={item.name}/>
                     })}
                 </div>
                 <div className={[styles.card, styles.back].join(" ")}>
-                    Back
                     <div className={styles.github}>
-                        Look at the code: <a target="_blank" href={config.github.site_url + "/blob/master/src/Software/Skills.js"}>
-                            {config.github.site_url + "/blob/master/src/Software/Skills.js"}
+                        Look at the code: <a target="_blank" rel="noreferrer" href={cfg.github.site_url + "/blob/master/src/Software/Skills.js"}>
+                            {cfg.github.site_url + "/blob/master/src/Software/Skills.js"}
                         </a>
                     </div>
                 </div>

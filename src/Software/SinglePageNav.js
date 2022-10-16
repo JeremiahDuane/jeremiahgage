@@ -7,11 +7,11 @@ function SinglePageNav(props) {
             <div className={styles.sideBar}>
                 <nav className={`${styles.navigation} navigation`}>
                     <ul>
-                        <li>
-                            {props.children.map((item, index)=>{
-                                return <a key={index} href={`#${item.props.header}`}>{item.props.header}</a>
-                            })}
-                        </li>
+                        {props.children.map((item, index)=>{
+                            return <li key={index}>
+                                <a href={`#${item.props.header}`}>{item.props.header}</a>
+                            </li>
+                        })}
                     </ul>
                 </nav>
             </div>
