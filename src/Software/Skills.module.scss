@@ -32,6 +32,9 @@
 .front {
     cursor: pointer;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.19);
+    .content {
+
+    }
 }
 
 .back {
@@ -42,10 +45,11 @@
     background-size: cover;
     color: white;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2) inset, 0 6px 20px 0 rgba(0, 0, 0, 0.19) inset;
-}
-
-.github {
-    a {
-        color: aqua;
+    .content{
+        display: inline-flex;
+        width: 100%;
+        .wrapper{
+            width: 50%;
+        }
     }
 }

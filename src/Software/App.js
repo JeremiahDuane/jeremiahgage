@@ -3,7 +3,7 @@ import Skills from './Skills';
 import SinglePageNav from './SinglePageNav.js'
 
 function App() {
-    console.log("v1.0.1")
+    console.log("v1.0.2")
     return (
         <>
             <SinglePageNav>

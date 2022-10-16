@@ -17,7 +17,7 @@ function CircleMeter(props) {
                     </div>
                 </div>
             </div>
-            <SvgCircleMeter className={styles.svg} fill="none" stroke="url(#GradientColor)" strokeWidth="20px" strokeDasharray={472} strokeDashoffset={472*(1-props.value)+20}/>
+            <SvgCircleMeter className={styles.svg} fill="none" stroke="url(#GradientColor)" strokeWidth="20px" strokeDasharray={440} strokeDashoffset={440 - 440*props.value}/>
         </div>
 
     );
