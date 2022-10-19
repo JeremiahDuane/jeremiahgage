@@ -65,7 +65,9 @@ function SkillsList() {
                 const sum = languages.reduce((accumulator, object) => {
                     return accumulator + object.value;
                 }, 0);
-                return <div className={styles.circleMeter__wrapper}><CircleMeter key={idx} value={(item.value)/sum} name={item.name}/></div>
+                return <div key={idx} className={styles.circleMeter__wrapper}>
+                    <CircleMeter value={(item.value)/sum} name={item.name}/>
+                </div>
             })}
         </div>
     );

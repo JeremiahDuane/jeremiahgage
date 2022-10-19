@@ -9,28 +9,52 @@
         /* bottom, image */
         url("../imgs/cover.jpg");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     min-width: 100%;
     min-height: 100%;
 }
 
-.heading {
-    position: absolute;
-    left: 15%;
-    top: 15%;
-    color: #ffffff;
-    display: inline-block;
+@media (min-width: 700px) {
+    .heading {
+        position: absolute;
+        left: 15%;
+        top: 15%;
+        color: #ffffff;
+        display: inline-block
+    }
+
+    h1 {
+        font-size: 90px;
+        color: white;
+        padding: 0px;
+        margin: 0px;
+        line-height: 90px;
+    }
+
+    h2 {
+        font-size: 2em;
+        color: white;    
+    }
 }
 
-h1 {
-    font-size: 90px;
-    color: white;
-    padding: 0px;
-    margin: 0px;
-    line-height: 90px;
-}
-
-h2 {
-    font-size: 2em;
-    color: white;    
+@media (max-width: 700px) {
+    .landing {
+        display: flex;
+        justify-content: center;
+    }
+    .heading {
+        color: #ffffff;
+        display: inline-block;
+        justify-content: center;
+    }
+    h1 {
+        font-size: 4em;
+        color: white;
+        padding: 0px;
+        margin: 0px;
+    }
+    h2 {
+        font-size: 1.5em;
+        color: white;    
+    }
 }

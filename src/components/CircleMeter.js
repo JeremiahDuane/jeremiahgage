@@ -1,8 +1,11 @@
 import styles from './CircleMeter.module.scss'
 import {ReactComponent as SvgCircleMeter} from './CircleMeter.svg';
+import {ReactComponent as SvgCircleMeterMobile} from './CircleMeter__Mobile.svg';
 
 function CircleMeter(props) {
-     return (
+    var isMobile = window.matchMedia("(max-width: 700px)").matches;
+
+    return (
         <div className={styles.circleMeter}>
             <div className={styles.skill}>
                 <div className={styles.outer}>
@@ -17,7 +20,10 @@ function CircleMeter(props) {
                     </div>
                 </div>
             </div>
-            <SvgCircleMeter className={styles.svg} fill="none" stroke="url(#GradientColor)" strokeWidth="20px" strokeDasharray={440} strokeDashoffset={440 - 440*props.value}/>
+            { isMobile
+                ? <SvgCircleMeterMobile className={styles.svg} fill="none" stroke="url(#GradientColor)" strokeWidth="20px" strokeDasharray={440} strokeDashoffset={440 - 440*props.value}/>
+                : <SvgCircleMeter className={styles.svg} fill="none" stroke="url(#GradientColor)" strokeWidth="20px" strokeDasharray={440} strokeDashoffset={440 - 440*props.value}/>
+            }
         </div>
 
     );

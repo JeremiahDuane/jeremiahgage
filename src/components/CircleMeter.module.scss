@@ -39,3 +39,20 @@
 .svg{
     position: absolute;
 }
+@media (max-width: 700px) {
+    .skill {
+        height: 120px;
+        width: 120px;
+    }
+    .outer {
+        height: 120px;
+        width: 120px;
+    }
+    .inner {
+        height: 80px;
+        width: 80px;
+    }
+    .content{
+        font-size: .75em;
+    }
+}
