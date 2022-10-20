@@ -1,4 +1,4 @@
-import Review from './Review';
+import Review from '../Review/Review';
 import styles from './Reviews.module.scss'
 import axios, { CancelToken } from "axios";
 import React, { useState, useEffect} from "react";

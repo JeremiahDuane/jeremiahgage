@@ -1,10 +1,16 @@
+import { useEffect, useState } from 'react';
 import styles from './CircleMeter.module.scss'
-import {ReactComponent as SvgCircleMeter} from './CircleMeter.svg';
-import {ReactComponent as SvgCircleMeterMobile} from './CircleMeter__Mobile.svg';
+import {ReactComponent as SvgCircleMeter} from '../../../imgs/CircleMeter.svg';
+import {ReactComponent as SvgCircleMeterMobile} from '../../../imgs/CircleMeter__Mobile.svg';
 
 function CircleMeter(props) {
-    var isMobile = window.matchMedia("(max-width: 700px)").matches;
+    var [isMobile, setIsMobile] = useState(window.matchMedia("(max-width: 700px)").matches)
 
+    window.addEventListener('resize', () => {
+        setIsMobile(window.matchMedia("(max-width: 700px)").matches);
+    }, true);
+
+    const CircleMeterToUse = isMobile ? SvgCircleMeterMobile : SvgCircleMeter;
     return (
         <div className={styles.circleMeter}>
             <div className={styles.skill}>
@@ -20,10 +26,7 @@ function CircleMeter(props) {
                     </div>
                 </div>
             </div>
-            { isMobile
-                ? <SvgCircleMeterMobile className={styles.svg} fill="none" stroke="url(#GradientColor)" strokeWidth="20px" strokeDasharray={440} strokeDashoffset={440 - 440*props.value}/>
-                : <SvgCircleMeter className={styles.svg} fill="none" stroke="url(#GradientColor)" strokeWidth="20px" strokeDasharray={440} strokeDashoffset={440 - 440*props.value}/>
-            }
+            <CircleMeterToUse className={styles.svg} fill="none" stroke="url(#GradientColor)" strokeWidth="20px" strokeDasharray={440} strokeDashoffset={440 - 440*props.value}/>
         </div>
 
     );

@@ -1,5 +1,5 @@
 import styles from './GitHubFooter.module.scss'
-import cfg from '../config';
+import cfg from '../../../config';
 
 function GitHubFooter(props) {
     return (

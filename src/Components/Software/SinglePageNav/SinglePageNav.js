@@ -8,7 +8,7 @@ function SinglePageNav(props) {
     return (
         <>
             <div className={styles.sideBar}>
-                <nav className={[styles.navigation, dropDownIsActive ? styles.active : "", "navigation"].join(" ")} tabIndex={1}  onClick={() => {setDropDownIsActive(val => !val)}}>
+                <nav className={["navigation", styles.navigation, (dropDownIsActive ? styles.isOpen : "")].join(" ")} tabIndex={1}  onClick={() => {setDropDownIsActive(val => !val)}}>
                     <div className={styles.dropdownButton}>    
                         <svg viewBox="0 0 100 80" width="20" height="30">
                             <rect y="15" width="100" height="15"></rect>
@@ -41,9 +41,9 @@ function navHighlighter() {
     let scrollY = window.pageYOffset;
   
     sections.forEach(current => {
-        const sectionHeight = current.offsetHeight;
+        const sectionHeight = current.parentElement.offsetHeight;
     
-        const sectionTop = (current.getBoundingClientRect().top + window.pageYOffset) - 50;
+        const sectionTop = current.getBoundingClientRect().top + window.pageYOffset - 150;
         var sectionId = current.getAttribute("id");
         
         var el = document.querySelector(".navigation a[href*=" + sectionId + "]")

@@ -1,9 +1,9 @@
 import { useState } from 'react'
+import FlipCard from '../../Shared/FlipCard/FlipCard.js'
+import StarMeter from '../../Shared/StarMeter/StarMeter.js'
+import Modal from '../../Shared/Modal/Modal.js'
+import Article from '../Article/Article.js'
 import styles from './Review.module.scss'
-import FlipCard from '../components/FlipCard.js'
-import StarMeter from '../components/StarMeter.js'
-import Modal from '../components/Modal.js'
-import Article from './Article.js'
 
 function Review(props) {
     const [visible, setVisible] = useState(false);

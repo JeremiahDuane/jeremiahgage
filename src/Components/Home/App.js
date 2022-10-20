@@ -1,9 +1,10 @@
-import Reviews from './Reviews'
+import Landing from './Landing/Landing';
+
 
 function App() {
     return (
         <>
-            <Reviews/>
+            <Landing/>
         </>
     );
 }

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import styles from './SkillsList.module.scss'
+import styles from './LanguagesList.module.scss'
 import axios, { CancelToken } from "axios";
-import CircleMeter from "../components/CircleMeter"
-import cfg from '../config';
+import CircleMeter from "../../Shared/CircleMeter/CircleMeter"
+import cfg from '../../../config';
 import { Octokit } from "octokit";
 
 function SkillsList() {

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import styles from './GitHubCodeDemo.module.scss'
-import axios, { CancelToken } from "axios";
-import cfg from '../config';
 import { Octokit, App } from "octokit";
+import axios, { CancelToken } from "axios";
+import styles from './GitHubCodeDemo.module.scss'
+import cfg from '../../../config';
 
 function GitHubCodeDemo(props) {
     var [code, setCode] = useState("");

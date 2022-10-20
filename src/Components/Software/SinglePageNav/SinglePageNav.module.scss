@@ -28,7 +28,8 @@ section:first-of-type {
 }
 
 .active {
-  font-weight: 600;
+    color: black;
+    font-weight: 600;
 }
 
 nav ul {
@@ -99,7 +100,7 @@ nav ul {
     }
 
     /* show dd content */
-    .navigation, .navigation.active
+    .navigation, .navigation.isOpen
     {
         .dropdownButton {
             right: 5px;
@@ -108,7 +109,7 @@ nav ul {
         .dropdownContent {
             display: none;
         }
-        &.active .dropdownContent{
+        &.isOpen .dropdownContent{
             display: block;
             position: absolute;
             right: 0px;

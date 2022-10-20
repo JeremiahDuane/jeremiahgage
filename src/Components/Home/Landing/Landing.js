@@ -1,5 +1,5 @@
 import styles from './Landing.module.scss'
-import Anchor from '../imgs/Anchor.js'
+import Anchor from '../../../imgs/Anchor.js'
 
 function Landing() {
     return (

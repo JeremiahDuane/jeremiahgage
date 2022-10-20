@@ -1,5 +1,5 @@
 import styles from './StarMeter.module.scss'
-import SvgStarMeter from '../imgs/StarMeter'
+import SvgStarMeter from '../../../imgs/StarMeter'
 
 function StarMeter(props) {
     return (

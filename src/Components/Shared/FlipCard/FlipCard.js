@@ -1,4 +1,4 @@
-import styles from '../components/FlipCard.module.scss'
+import styles from './FlipCard.module.scss'
 import { useState } from "react"; 
 
 function FlipCard(props) {

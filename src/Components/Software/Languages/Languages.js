@@ -1,12 +1,12 @@
-import styles from './Skills.module.scss'
-import descriptions from './descriptions';
-import FlipCard from '../components/FlipCard.js'
-import SkillsList from './SkillsList';
-import GitHubFooter from './GitHubFooter';
-import GitHubCodeDemo from './GithubCodeDemo';
+import styles from './Languages.module.scss'
+import descriptions from '../descriptions';
+import FlipCard from '../../Shared/FlipCard/FlipCard'
+import SkillsList from '../LanguagesList/LanguagesList';
+import GitHubFooter from '../GitHubFooter/GitHubFooter';
+import GitHubCodeDemo from '../GitHubCodeDemo/GitHubCodeDemo';
 
 function Skills() {
-    var heading = "Skills"
+    var heading = "Languages"
     return (
         <div className={styles.row}>
             <FlipCard>
