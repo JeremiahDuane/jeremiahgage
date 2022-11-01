@@ -5,14 +5,14 @@ import CircleMeter from "../../Shared/CircleMeter/CircleMeter"
 import cfg from '../../../config';
 import { Octokit } from "octokit";
 
-function SkillsList() {
+function LanguagesList() {
     var [languages, setLanguages] = useState([]);
     var [refresh, setRefresh] = useState(0);
 
     useEffect(() => {
         const cancelTokenSource = CancelToken.source();
     
-        async function loadSkills() {
+        async function loadLanguages() {
             try {
                 const octokit = new Octokit({
                     auth: cfg.github.api_auth
@@ -49,7 +49,7 @@ function SkillsList() {
             }
         }
     
-        loadSkills();
+        loadLanguages();
     
         return () => {
           // here we cancel the previous in-flight, unfinished http request
@@ -74,4 +74,4 @@ function SkillsList() {
 }
 
 
-export default SkillsList;
+export default LanguagesList;

@@ -5,7 +5,7 @@ import SkillsList from '../LanguagesList/LanguagesList';
 import GitHubFooter from '../GitHubFooter/GitHubFooter';
 import GitHubCodeDemo from '../GitHubCodeDemo/GitHubCodeDemo';
 
-function Skills() {
+function Languages() {
     var heading = "Languages"
     return (
         <div className={styles.row}>
@@ -30,10 +30,10 @@ function Skills() {
                             {descriptions.skills.back}
                         </div>
                         <div className={styles.wrapper}>
-                            <GitHubCodeDemo path="/repos/JeremiahDuane/jeremiahgage/contents/src/Software/Skills.js"/>
+                            <GitHubCodeDemo path="/repos/JeremiahDuane/jeremiahgage/contents/src/Components/Software/Languages/"/>
                         </div>
                     </div>
-                    <GitHubFooter path="/blob/master/src/Software/Skills.js"/>
+                    <GitHubFooter path="/blob/master/src/Components/Software/Languages/Languages.js"/>
                 </div>
             </FlipCard>
         </div>
@@ -41,4 +41,4 @@ function Skills() {
 }
 
 
-export default Skills;
+export default Languages;
