@@ -15,17 +15,35 @@ function GitHubCodeDemo(props) {
     
         async function loadCode() {
             try {
+                const cacheName = 'github_documents';
+                const cacheExists = await caches.has(cacheName);
+                const cache = await caches.open(cacheName);
+                const retVal = [];
                 const octokit = new Octokit({
                     auth: cfg.github.api_auth
                 });
-                const asyncResponse = await octokit.request(cfg.github.api_url + props.path);
-                const retVal = [];
-                asyncResponse.data.forEach(async el => {
-                    const document = await octokit.request(el.url);
-                    retVal.push({title: el.name, document: Buffer.from(document.data.content, 'base64').toString('ascii')});
-                    setRefresh(val => val + 1)
-                });
-                setDocuments(retVal)
+                
+                if (cacheExists) {
+                    const response  = await cache.match(cfg.github.api_url + props.path);
+                    const body = await response.json()
+                    body.forEach(async el => {
+                        const r = await cache.match(el.url);
+                        const document = await r.json();
+                        retVal.push({title: el.name, document: Buffer.from(document.content, 'base64').toString('ascii')});
+                        setRefresh(val => val + 1);
+                    });
+                } else {
+                    const response = await octokit.request(cfg.github.api_url + props.path);
+                    const body = response.data
+                    body.forEach(async el => {
+                        cache.add(el.url);
+                        const document = await octokit.request(el.url);
+                        retVal.push({title: el.name, document: Buffer.from(document.data.content, 'base64').toString('ascii')});
+                        setRefresh(val => val + 1);
+                    });
+                    cache.add(cfg.github.api_url + props.path)
+                }
+                setDocuments(retVal);
             } catch (err) {
                 if (axios.isCancel(err)) {
                   return console.info(err);
@@ -52,8 +70,8 @@ function GitHubCodeDemo(props) {
                     onClick={(event) => {event.stopPropagation()}}            
                     >
                     <TabGroup>
-                        {documents.map((el) => {
-                            return (<div title={el.title} stylesLinks={styles.links}
+                        {documents.map((el, idx) => {
+                            return (<div key={idx} title={el.title} stylesLinks={styles.links}
                                 className={[styles.tab, isActive ? styles.active : ""].join(" ")}>            
                                 <textarea 
                                     readOnly 

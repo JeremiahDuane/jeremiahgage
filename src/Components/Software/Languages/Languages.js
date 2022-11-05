@@ -1,7 +1,7 @@
 import styles from './Languages.module.scss'
 import descriptions from '../descriptions';
 import FlipCard from '../../Shared/FlipCard/FlipCard'
-import SkillsList from '../LanguagesList/LanguagesList';
+import LanguagesList from './LanguagesList';
 import GitHubFooter from '../GitHubFooter/GitHubFooter';
 import GitHubCodeDemo from '../GitHubCodeDemo/GitHubCodeDemo';
 
@@ -15,7 +15,7 @@ function Languages() {
                         {heading}
                     </h1>                   
                     <div className={styles.content}>
-                        <SkillsList/>
+                        <LanguagesList/>
                         <div className={styles.wrapper}>
                             {descriptions.skills.front}
                         </div>

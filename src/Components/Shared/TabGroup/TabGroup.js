@@ -9,7 +9,7 @@ function TabGroup(props) {
     props.children.map(
         (child, index) => {
             tabLinks.push(<button key={index} className={[styles.tabLink, index === selectedID ? styles.active : ""].join(" ")} onClick={() => {setSelectedID(index)}}>{child.props.title}</button>)
-            tabs.push(<div  key={index} className={[styles.tab, index === selectedID ? styles.active : ""].join(" ")}>{child.props.children}</div>)
+            tabs.push(<div key={index} className={[styles.tab, index === selectedID ? styles.active : ""].join(" ")}>{child.props.children}</div>)
         }
     )
 
