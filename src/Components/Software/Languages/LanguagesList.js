@@ -17,22 +17,28 @@ function LanguagesList() {
     
         const loadLanguages = async () => {
             try {
+                //check to see if the cache exists
                 const cacheName = 'github_languages';
-                const path = '/users/JeremiahDuane/repos';
                 const cacheExists = await caches.has(cacheName);
                 const cache = await caches.open(cacheName);
-                const retVal = [];
+                
+                //check to see if the cache has expired 
+                const timeCache = await caches.match("/time-cached");
+                const timeCached = timeCache ? await timeCache.json() : false;
+                const timeCacheHasNotExpired = timeCached && timeCached > (Date.now() - 60*60*1000);
+                
+                const path = '/users/JeremiahDuane/repos';
                 const octokit = new Octokit({
                     auth: cfg.github.api_auth
                 });
-                
-                if (cacheExists) {
+
+                if (cacheExists && timeCacheHasNotExpired) {
                     const response = await cache.match(cfg.github.api_url + path);
                     const body = await response.json();
                     body.map(async(repo) => {
                         // this repo is primarily auto-generated code, and is not applicable to this query
                         if (repo.id === 270893091) return;
-                        cache.add(repo.languages_url);
+
                         const languageResponse = await cache.match(repo.languages_url);
                         const languageBody = await languageResponse.json();
                         for (var prop in languageBody) {
@@ -52,12 +58,15 @@ function LanguagesList() {
                     );
                 } else {
                     const response = await octokit.request(cfg.github.api_url + path);
-                    cache.add(cfg.github.api_url + path);
                     const body = response.data;
+                    cache.add(cfg.github.api_url + path);
+                    
                     body.map(async(repo) => {
+                        cache.put('/time-cached', new Response( Date.now()));
+                        cache.add(repo.languages_url);
+
                         // this repo is primarily auto-generated code, and is not applicable to this query
                         if (repo.id === 270893091) return;
-                        cache.add(repo.languages_url)
                         const languageResponse = await octokit.request(repo.languages_url);
                         const languageBody = languageResponse.data;
                         for (var prop in languageBody) {

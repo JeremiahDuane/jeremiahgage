@@ -15,16 +15,23 @@ function GitHubCodeDemo(props) {
     
         async function loadCode() {
             try {
+                //check to see if the cache exists
                 const cacheName = 'github_documents';
                 const cacheExists = await caches.has(cacheName);
                 const cache = await caches.open(cacheName);
+                
+                //check to see if the cache has expired 
+                const timeCache = await caches.match("/time-cached");
+                const timeCached = timeCache ? await timeCache.json() : false;
+                const timeCacheHasNotExpired = timeCached && timeCached > (Date.now() - 60*60*1000);
+                
                 const retVal = [];
                 const octokit = new Octokit({
                     auth: cfg.github.api_auth
                 });
                 
-                if (cacheExists) {
-                    const response  = await cache.match(cfg.github.api_url + props.path);
+                if (cacheExists && timeCacheHasNotExpired) {
+                    const response  = await cache.match(cfg.github.api_url + props.path);                    
                     const body = await response.json()
                     body.forEach(async el => {
                         const r = await cache.match(el.url);
@@ -41,7 +48,8 @@ function GitHubCodeDemo(props) {
                         retVal.push({title: el.name, document: Buffer.from(document.data.content, 'base64').toString('ascii')});
                         setRefresh(val => val + 1);
                     });
-                    cache.add(cfg.github.api_url + props.path)
+                    cache.put('/time-cached', new Response( Date.now()));
+                    cache.add(cfg.github.api_url + props.path);
                 }
                 setDocuments(retVal);
             } catch (err) {
