@@ -30,7 +30,7 @@ function Languages() {
                             {descriptions.skills.back}
                         </div>
                         <div className={styles.wrapper}>
-                            <GitHubCodeDemo path="/repos/JeremiahDuane/jeremiahgage/contents/src/Components/Software/Languages/"/>
+                            <GitHubCodeDemo path="/repos/anchoredapplications/jeremiahgage/contents/src/Components/Software/Languages/"/>
                         </div>
                     </div>
                     <GitHubFooter path="/blob/master/src/Components/Software/Languages/Languages.js"/>
