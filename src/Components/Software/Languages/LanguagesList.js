@@ -27,7 +27,7 @@ function LanguagesList() {
                 const timeCached = timeCache ? await timeCache.json() : false;
                 const timeCacheHasNotExpired = timeCached && timeCached > (Date.now() - 60*60*1000);
                 
-                const path = '/users/JeremiahDuane/repos';
+                const path = '/users/anchoredapplications/repos';
                 const octokit = new Octokit({
                     auth: cfg.github.api_auth
                 });
