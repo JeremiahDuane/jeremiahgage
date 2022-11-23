@@ -3,7 +3,7 @@ import Languages from './Languages/Languages';
 import SinglePageNav from './SinglePageNav/SinglePageNav'
 
 function App() {
-    console.log("v1.0.2")
+    console.log("v1.0.3")
     return (
         <>
             <SinglePageNav>
