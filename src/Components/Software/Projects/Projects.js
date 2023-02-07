@@ -1,12 +1,12 @@
-import styles from './Languages.module.scss'
+import styles from './Projects.module.scss'
 import descriptions from '../descriptions';
 import FlipCard from '../../Shared/FlipCard/FlipCard'
-import LanguagesList from './LanguagesList';
 import GitHubFooter from '../GitHubFooter/GitHubFooter';
 import GitHubCodeDemo from '../GitHubCodeDemo/GitHubCodeDemo';
+import ProjectsList from './ProjectsList';
 
-function Languages() {
-    var heading = "Languages"
+function Projects() {
+    var heading = "Projects"
     return (
         <div className={styles.row}>
             <FlipCard>
@@ -15,9 +15,9 @@ function Languages() {
                         {heading}
                     </h1>                   
                     <div className={styles.content}>
-                        <LanguagesList/>
+                        <ProjectsList/>
                         <div className={styles.wrapper}>
-                            {descriptions.skills.front}
+                            {descriptions.projects.front}
                         </div>
                     </div>
                 </div>
@@ -27,7 +27,7 @@ function Languages() {
                     </h1>        
                     <div className={styles.content}>
                         <div className={styles.wrapper}>
-                            {descriptions.skills.back}
+                            {descriptions.projects.back}
                         </div>
                         <div className={styles.wrapper}>
                             <GitHubCodeDemo path="/repos/anchoredapplications/jeremiahgage/contents/src/Components/Software/Languages/"/>
@@ -41,4 +41,4 @@ function Languages() {
 }
 
 
-export default Languages;
+export default Projects;

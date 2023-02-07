@@ -1,27 +1,31 @@
 import styles from './FlipCard.module.scss'
-import { useState } from "react"; 
+import React, { useState } from "react"; 
+import ReactCardFlip from 'react-card-flip';
 
-function FlipCard(props) {
-    const [showBack, setShowBack] = useState(false); 
+class FlipCard extends React.Component {
+    constructor(props) {
+      super();
+        this.state = {
+        isFlipped: false
+      };
+      this.handleClick = this.handleClick.bind(this);
 
-    function handleClick() { 
-        setShowBack(!showBack); 
     }
-
-    return (
-        <div className={styles.flipCardOuter}
-            onClick={handleClick}
-        >
-        <div className={[styles.flipCardInner, ((showBack) ? styles.showBack : "")].join(" ")}>
-            <div className={[styles.card, styles.front ].join(" ") }>
-                {props.children[0]}
-            </div>
-            <div className={[styles.card, styles.back].join(" ")}>
-                {props.children[1]}
-            </div>
-        </div>
-        </div>
-    );
-}
+  
+    handleClick(e) {
+      e.preventDefault();
+      this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
+    }
+  
+    
+    render() {
+      return (
+        <ReactCardFlip isFlipped={this.state.isFlipped}>
+            <div onClick={this.handleClick}>{this.props.children[0]}</div>
+            <div onClick={this.handleClick}>{this.props.children[1]}</div>
+        </ReactCardFlip>
+      )
+    }
+  }
 
 export default FlipCard;
