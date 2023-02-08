@@ -5,7 +5,7 @@ import GitHubFooter from '../GitHubFooter/GitHubFooter';
 import GitHubCodeDemo from '../GitHubCodeDemo/GitHubCodeDemo';
 import ProjectsList from './ProjectsList';
 
-function Projects() {
+function Projects(props) {
     var heading = "Projects"
     return (
         <div className={styles.row}>
@@ -15,7 +15,7 @@ function Projects() {
                         {heading}
                     </h1>                   
                     <div className={styles.content}>
-                        <ProjectsList/>
+                        <ProjectsList projects={props.projects}/>
                         <div className={styles.wrapper}>
                             {descriptions.projects.front}
                         </div>

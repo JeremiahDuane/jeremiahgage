@@ -1,14 +1,7 @@
-import { useEffect, useState } from 'react'
 import styles from './ProjectsList.module.scss'
-import axios, { CancelToken } from "axios";
-import CircleMeter from "../../Shared/CircleMeter/CircleMeter"
-import cfg from '../../../config';
-import { Octokit } from "octokit";
-import { getCookie, setCookie } from '../../Shared/Cookie/Cookie';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Project from './Project';
-const PROJECTS_COOKIE = "PROJECTS"
 
 const responsive = {
     superLargeDesktop: {
@@ -30,11 +23,7 @@ const responsive = {
     }
 };
 
-function ProjectsList() {
-    var [languages, setLanguages] = useState([]);
-    var [refresh, setRefresh] = useState(0);
-
-    
+function ProjectsList(props) {
     return (
         <div className={styles.list} onClick={(event) => {event.stopPropagation()}}   >                
             <Carousel responsive={responsive}>

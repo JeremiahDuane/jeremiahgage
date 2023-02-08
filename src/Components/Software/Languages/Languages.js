@@ -5,7 +5,7 @@ import LanguagesList from './LanguagesList';
 import GitHubFooter from '../GitHubFooter/GitHubFooter';
 import GitHubCodeDemo from '../GitHubCodeDemo/GitHubCodeDemo';
 
-function Languages() {
+function Languages(props) {
     var heading = "Languages"
     return (
         <div className={styles.row}>
@@ -15,7 +15,7 @@ function Languages() {
                         {heading}
                     </h1>                   
                     <div className={styles.content}>
-                        <LanguagesList/>
+                        <LanguagesList languages={props.languages}/>
                         <div className={styles.wrapper}>
                             {descriptions.skills.front}
                         </div>

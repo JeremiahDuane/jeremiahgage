@@ -2,10 +2,10 @@ import styles from './Project.module.scss'
 
 function Project(props) {
     return (
-        <div className={styles.review}>
-            <img width="400px" height="350px" src={props.image}></img>
+        <div className={styles.project}>
+            <img width="400px" height="350px" src={props.image} alt={props.title}></img>
             <div className={styles.heading}>    
-                <h1>{props.title}</h1>
+                <h5>{props.title}</h5>
             </div>
         </div>
     );
