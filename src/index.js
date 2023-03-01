@@ -12,16 +12,15 @@ root.render(
     <React.StrictMode>
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Nav />}/>
                 <Route 
-                    path="software/" 
+                    path="/" 
                     element={<Software />}   
                 />                
                 <Route 
                     path="food/" 
                     element={<Food />}   
                 />
-                <Route path="*" element={<Nav />} />
+                <Route path="*" element={<Software />} />
             </Routes>
         </BrowserRouter>
     </React.StrictMode>

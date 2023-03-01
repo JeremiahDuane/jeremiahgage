@@ -14,7 +14,7 @@ const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
-      items: 5
+      items: 6
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -38,10 +38,10 @@ function ProjectsList() {
     return (
         <div className={styles.list} onClick={(event) => {event.stopPropagation()}}   >                
             <Carousel responsive={responsive}>
-                <Project title="Hello"/>
-                <div>Item 2</div>
-                <div>Item 3</div>
-                <div>Item 4</div>
+                <Project title="Hello" image="https://community.arm.com/cfs-file/__key/communityserver-blogs-components-weblogfiles/00-00-00-21-42/Code-on-computer-screen.jpg"/>
+                <Project title="Hello" image="https://community.arm.com/cfs-file/__key/communityserver-blogs-components-weblogfiles/00-00-00-21-42/Code-on-computer-screen.jpg"/>
+                <Project title="Hello" image="https://community.arm.com/cfs-file/__key/communityserver-blogs-components-weblogfiles/00-00-00-21-42/Code-on-computer-screen.jpg"/>
+                <Project title="Hello" image="https://community.arm.com/cfs-file/__key/communityserver-blogs-components-weblogfiles/00-00-00-21-42/Code-on-computer-screen.jpg"/>
             </Carousel>;
         </div>
     );

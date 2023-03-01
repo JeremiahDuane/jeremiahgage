@@ -1,6 +1,7 @@
 .row {
-    position: relative
+    position: relative;
 }
+
 /* Create two equal columns that floats next to each other */
 .column {
     float: left;
@@ -29,11 +30,14 @@
     padding-top: 50px;
     text-align: center;
     min-width: 100%;
+    min-height: 720px;
     height: 90vh;
+    max-height: 100%;
 }
 
 .front {
     cursor: pointer;
+
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     .content {
         padding: 30px;
