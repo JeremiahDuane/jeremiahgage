@@ -1,13 +1,18 @@
 .project {
+    &:first-of-type{
+        padding-left: 0;
+    }
+    padding: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .front {
     cursor: pointer;
-}
-
-.back {
-    padding: 5vh;
 }
 
 p {
@@ -29,9 +34,17 @@ p {
 }
 
 .heading {
+    margin: 0;
     padding-top: 45%;
     text-align: center;
     text-shadow: 2px 5px 5px black;
     font-size: 48px;
 }
 
+.back {
+    height: 40vh; 
+    width: 40vh;
+    text-align: 'center'; 
+    margin-left: 12vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

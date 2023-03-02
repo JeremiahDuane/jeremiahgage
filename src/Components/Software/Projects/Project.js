@@ -1,4 +1,5 @@
 import styles from './Project.module.scss'
+import FlipCard from '../../Shared/FlipCard/FlipCard.js'
 
 function Project(props) {
     const inlineStyle = {    
@@ -13,11 +14,18 @@ function Project(props) {
         marginLeft:'12vh'
     }
     return (
-            <div className={styles.project} style={inlineStyle}>
-                <h2 className={styles.heading}>    
-                    {props.title}
-                </h2>
-            </div>
+        <div className={styles.project}> 
+            <FlipCard>
+                    <div className={[styles.card, styles.front].join(" ")} style={inlineStyle} >
+                        <h2 className={styles.heading}>    
+                            {props.title}
+                        </h2>
+                    </div>
+                <div className={[styles.card, styles.back].join(" ")}>
+
+                </div>
+            </FlipCard>
+        </div>
     );
 }
 
