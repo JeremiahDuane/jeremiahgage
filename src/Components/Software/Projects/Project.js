@@ -7,7 +7,10 @@ function Project(props) {
           rgba(0, 0, 0, 0.3), 
           rgba(0, 0, 0, 0.3)
         ),
-        url(${props.image})`,
+        url(${props.image}), no-repeat`,
+        backgroundPosition: "center center",
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: '100% 100%',
         height: '40vh', 
         width: '40vh', 
         textAlign: 'center', 
@@ -16,13 +19,15 @@ function Project(props) {
     return (
         <div className={styles.project}> 
             <FlipCard>
-                    <div className={[styles.card, styles.front].join(" ")} style={inlineStyle} >
-                        <h2 className={styles.heading}>    
-                            {props.title}
-                        </h2>
-                    </div>
+                <div className={[styles.card, styles.front].join(" ")} style={inlineStyle} >
+                    <h2 className={styles.heading}>    
+                        {props.title}
+                    </h2>
+                </div>
                 <div className={[styles.card, styles.back].join(" ")}>
-
+                    <h4 className={styles.summary}>    
+                        {props.summary}
+                    </h4>
                 </div>
             </FlipCard>
         </div>

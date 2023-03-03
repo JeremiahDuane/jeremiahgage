@@ -2,12 +2,12 @@ import { useState } from 'react';
 import styles from './SinglePageNav.module.scss'
  
 function SinglePageNav(props) {
-    window.addEventListener("scroll", navHighlighter);
-    const [dropDownIsActive, setDropDownIsActive] = useState(false)
+    // window.addEventListener("scroll", navHighlighter);
+    // const [dropDownIsActive, setDropDownIsActive] = useState(false)
 
     return (
         <>
-            <div className={styles.sideBar}>
+            {/* <div className={styles.sideBar}>
                 <nav className={["navigation", styles.navigation, (dropDownIsActive ? styles.isOpen : "")].join(" ")} tabIndex={1}  onClick={() => {setDropDownIsActive(val => !val)}}>
                     <div className={styles.dropdownButton}>    
                         <svg viewBox="0 0 100 80" width="20" height="30">
@@ -24,7 +24,7 @@ function SinglePageNav(props) {
                         })}
                     </ul>
                 </nav>
-            </div>
+            </div> */}
             <div className={styles.mainContent}>
             {props.children.map((item, index)=>{
                 return <section key={index} id={item.props.header}>

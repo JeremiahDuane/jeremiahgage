@@ -25,12 +25,11 @@ const responsive = {
 
 function ProjectsList(props) {
     return (
-        <div className={styles.list} onClick={(event) => {event.stopPropagation()}}   >                
+        <div className={styles.list}  onClick={(event) => {event.stopPropagation()}}>                
             <Carousel responsive={responsive}>
-                <Project title="Hello" image="https://community.arm.com/cfs-file/__key/communityserver-blogs-components-weblogfiles/00-00-00-21-42/Code-on-computer-screen.jpg"/>
-                <Project title="dajhfdkjafh" image="https://community.arm.com/cfs-file/__key/communityserver-blogs-components-weblogfiles/00-00-00-21-42/Code-on-computer-screen.jpg"/>
-                <Project title="Hello" image="https://community.arm.com/cfs-file/__key/communityserver-blogs-components-weblogfiles/00-00-00-21-42/Code-on-computer-screen.jpg"/>
-                <Project title="Hello" image="https://community.arm.com/cfs-file/__key/communityserver-blogs-components-weblogfiles/00-00-00-21-42/Code-on-computer-screen.jpg"/>
+                {props.projects.map((project, idx) => {
+                    return <Project key={idx} title={project.title} image={project.image} summary={project.summary}/>
+                })}
             </Carousel>
         </div>
     );
