@@ -1,4 +1,4 @@
-import styles from './ProjectsList.module.scss'
+import styles from '../Software.module.scss'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Project from './Project';

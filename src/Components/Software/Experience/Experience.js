@@ -3,10 +3,9 @@ import descriptions from '../descriptions';
 import FlipCard from '../../Shared/FlipCard/FlipCard'
 import GitHubFooter from '../GitHubFooter/GitHubFooter';
 import GitHubCodeDemo from '../GitHubCodeDemo/GitHubCodeDemo';
-import ProjectsList from './ProjectsList';
 
-function Projects(props) {
-    var heading = "Projects"
+function Experience(props) {
+    var heading = "Experience"
     return (
         <div className={styles.row}>
             <FlipCard>
@@ -15,7 +14,6 @@ function Projects(props) {
                         {heading}
                     </h1>                   
                     <div className={styles.content}>
-                        <ProjectsList projects={props.projects}/>
                         <div className={styles.wrapper}>
                             {descriptions.projects.front}
                         </div>
@@ -30,10 +28,10 @@ function Projects(props) {
                             {descriptions.projects.back}
                         </div>
                         <div className={styles.wrapper}>
-                            <GitHubCodeDemo path="/repos/anchoredapplications/jeremiahgage/contents/src/Components/Software/Languages/"/>
+                            <GitHubCodeDemo path="/repos/anchoredapplications/jeremiahgage/contents/src/Components/Software/About/"/>
                         </div>
                     </div>
-                    <GitHubFooter path="/blob/master/src/Components/Software/Languages/Languages.js"/>
+                    <GitHubFooter path="/blob/master/src/Components/Software/About/About.js"/>
                 </div>
             </FlipCard>
         </div>
@@ -41,4 +39,4 @@ function Projects(props) {
 }
 
 
-export default Projects;
+export default Experience;

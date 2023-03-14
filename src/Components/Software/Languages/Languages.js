@@ -1,4 +1,4 @@
-import styles from './Languages.module.scss'
+import styles from '../Software.module.scss'
 import descriptions from '../descriptions';
 import FlipCard from '../../Shared/FlipCard/FlipCard'
 import LanguagesList from './LanguagesList';
