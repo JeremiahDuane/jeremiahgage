@@ -63,13 +63,22 @@ function navHighlighter() {
 }
 
 function alignFrontAndBackOfCards() {
-    document.querySelectorAll(".react-card-flipper").forEach(card => { 
-        let heights = []
-        let faces = [card.children[0].children[0], card.children[1].children[0]]
-        faces.forEach(el => { heights.push(Number(el.offsetHeight))});
-        let max = Math.max( ...heights );
-        faces.forEach(el => { el.setAttribute("style", `height: ${max}px`)});
-    });
+    let heights = []
+    let allFaces = []
+    document.querySelectorAll("section").forEach(section => {
+        let front = section.querySelector(".react-card-front");
+        let back = section.querySelector(".react-card-back");
+        if (front && back) {
+            let frontFace = front.querySelector('.cardFace');
+            let backFace = back.querySelector('.cardFace');
+            allFaces.push(frontFace, backFace)
+            heights.push(Number(frontFace.offsetHeight), Number(backFace.offsetHeight));
+        }
+    })
+    let maxHeight = Math.max( ...heights );
+    allFaces.forEach(face => {
+        face.setAttribute("style", `height: ${maxHeight}px;`)
+    })
 }
 
 export default SinglePageNav;
