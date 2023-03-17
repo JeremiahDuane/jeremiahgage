@@ -5,7 +5,7 @@ function GitHubFooter(props) {
     return (
         <div className={styles.github}>
             <p>
-                GitHub: <a target="_blank" rel="noreferrer" href={cfg.github.site_url + props.path}>
+                GitHub: <a target="_blank" rel="noreferrer" href={cfg.github.site_url + props.path} onClick={(event) => {event.stopPropagation()}}>
                 {cfg.github.site_url + props.path}
                 </a>
             </p>

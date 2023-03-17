@@ -1,3 +1,9 @@
+const urls = {
+    wikipedia: {
+        SOLID: "https://simple.wikipedia.org/wiki/SOLID_(object-oriented_design)#SOLID_Principles"
+    }
+}
+
 const descriptions = {
     skills: {
         front: "Here are some of the skills I have accumulated over the years.",
@@ -8,8 +14,26 @@ const descriptions = {
         back: "This is how it works."
     },
     about: {
-        front: "",
-        back: ""
+        front: <>
+                    <h3>
+                        Some would say a good software developer writes good code. I would posit that good code writes itself. 
+                        Through the minimazation of redundancy by commitment to 
+                        &nbsp;<a href={urls.wikipedia.SOLID} target="_blank" onClick={(e) => {e.stopPropagation()}}>SOLID</a>&nbsp;
+                        priciples, and the reuse of code through component libraries, the development required by developers tends to zero. A good developer, then, can hardly be characterized
+                        as a developer at all, rather, a thinker, a creator, an engineer. 
+                    </h3>
+                    <h3>
+                        This portfolio is a small example of such code. Do you want to take a closer look? Click anywhere in this pane to begin. 
+                    </h3>
+                </>,
+        back: <>
+                <p>
+                    This is a glimpse of how this pane works. This is a static page, so nothing too fancy. Using a custom React.js/JSX component, this file needs only be 13 lines long.
+                </p>
+                <p>
+                For more information, check out the GitHub. 
+                </p>
+            </>
     },
     experience: {
         front: "",

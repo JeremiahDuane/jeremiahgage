@@ -4,6 +4,10 @@ import styles from './SinglePageNav.module.scss'
 function SinglePageNav(props) {
     // window.addEventListener("scroll", navHighlighter);
     // const [dropDownIsActive, setDropDownIsActive] = useState(false)
+    alignFrontAndBackOfCards();
+    window.addEventListener('resize', () => {
+        alignFrontAndBackOfCards();
+    }, true);
 
     return (
         <>
@@ -58,5 +62,14 @@ function navHighlighter() {
     });
 }
 
+function alignFrontAndBackOfCards() {
+    document.querySelectorAll(".react-card-flipper").forEach(card => { 
+        let heights = []
+        let faces = [card.children[0].children[0], card.children[1].children[0]]
+        faces.forEach(el => { heights.push(Number(el.offsetHeight))});
+        let max = Math.max( ...heights );
+        faces.forEach(el => { el.setAttribute("style", `height: ${max}px`)});
+    });
+}
 
 export default SinglePageNav;

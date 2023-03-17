@@ -2,6 +2,7 @@ import styles from './FlipCard.module.scss'
 import React, { useState } from "react"; 
 import ReactCardFlip from 'react-card-flip';
 
+
 class FlipCard extends React.Component {
     constructor(props) {
       super();
@@ -19,12 +20,12 @@ class FlipCard extends React.Component {
   
     
     render() {
-      return (
-        <ReactCardFlip isFlipped={this.state.isFlipped}>
-            <div onClick={this.handleClick}>{this.props.children[0]}</div>
-            <div onClick={this.handleClick}>{this.props.children[1]}</div>
-        </ReactCardFlip>
-      )
+        return (
+            <ReactCardFlip isFlipped={this.state.isFlipped}>
+                <div className="cardFace" onClick={this.handleClick}>{this.props.children[0]}</div>
+                <div className="cardFace" onClick={this.handleClick}>{this.props.children[1]}</div>
+            </ReactCardFlip>
+        )
     }
   }
 

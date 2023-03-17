@@ -1,8 +1,7 @@
 import styles from './LanguagesList.module.scss'
 import CircleMeter from "../../Shared/CircleMeter/CircleMeter"
 
-function LanguagesList(props) {
-    console.log(props.languages)
+export default function LanguagesList(props) {
     return (
         <div className={styles.list}>                 
             {props.languages.map((item, idx) => {
@@ -16,5 +15,3 @@ function LanguagesList(props) {
         </div>
     );
 }
-
-export default LanguagesList;

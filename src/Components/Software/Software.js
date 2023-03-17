@@ -5,20 +5,20 @@ import GitHubCodeDemo from './GitHubCodeDemo/GitHubCodeDemo';
 
 function Software(props) {
     return (
-        <div className={styles.row}>
-            <FlipCard>
-                <div className={[styles.card, styles.front].join(" ")}>
+        <div className={styles.card}>
+            <FlipCard> 
+                <div className={[styles.cardFace, styles.front].join(" ")}>
                     <h1 className={styles.heading}>
                         {props.heading}
                     </h1>                   
                     <div className={styles.content}>
                         {props.children}
-                        <div className={styles.wrapper}>
-                            {props.description.front}
-                        </div>
+                    </div>
+                    <div className={styles.wrapper}>
+                        {props.description.front}
                     </div>
                 </div>
-                <div className={[styles.card, styles.back].join(" ")}>
+                <div className={[styles.cardFace, styles.back].join(" ")}>
                     <h1 className={styles.heading}>
                         {props.heading}
                     </h1>        
