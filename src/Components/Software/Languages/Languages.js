@@ -1,42 +1,17 @@
-import styles from '../Software.module.scss'
-import descriptions from '../descriptions';
-import FlipCard from '../../Shared/FlipCard/FlipCard'
+import {descriptions} from '../data';
 import LanguagesList from './LanguagesList';
-import GitHubFooter from '../GitHubFooter/GitHubFooter';
-import GitHubCodeDemo from '../GitHubCodeDemo/GitHubCodeDemo';
+import Software from '../Software';
 
 function Languages(props) {
-    var heading = "Languages"
     return (
-        <div className={styles.row}>
-            <FlipCard>
-                <div className={[styles.card, styles.front].join(" ")}>
-                    <h1 className={styles.heading}>
-                        {heading}
-                    </h1>                   
-                    <div className={styles.content}>
-                        <LanguagesList languages={props.languages}/>
-                        <div className={styles.wrapper}>
-                            {descriptions.skills.front}
-                        </div>
-                    </div>
-                </div>
-                <div className={[styles.card, styles.back].join(" ")}>
-                    <h1 className={styles.heading}>
-                        {heading}
-                    </h1>        
-                    <div className={styles.content}>
-                        <div className={styles.wrapper}>
-                            {descriptions.skills.back}
-                        </div>
-                        <div className={styles.wrapper}>
-                            <GitHubCodeDemo path="/repos/anchoredapplications/jeremiahgage/contents/src/Components/Software/Languages/"/>
-                        </div>
-                    </div>
-                    <GitHubFooter path="/blob/master/src/Components/Software/Languages/Languages.js"/>
-                </div>
-            </FlipCard>
-        </div>
+        <Software 
+            heading="languages"
+            demoPath="/repos/anchoredapplications/jeremiahgage/contents/src/Components/Software/Languages/"
+            footerPath="/blob/master/src/Components/Software/Languages/Languages.js"
+            description={descriptions.skills}
+        >
+            <LanguagesList languages={props.languages}/>
+        </Software>
     );
 }
 

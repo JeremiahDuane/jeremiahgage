@@ -56,7 +56,6 @@ function GitHubCodeDemo(props) {
                 if (axios.isCancel(err)) {
                   return console.info(err);
                 }
-                console.error(err);
             }
         }
     
