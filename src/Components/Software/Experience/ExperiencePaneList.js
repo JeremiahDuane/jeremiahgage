@@ -1,9 +1,27 @@
 import ExperiencePane from './ExperiencePane';
+import styles from "./Experience.module.scss"
 
 function ExperiencePaneList(props) {
-    return props.experiences.map((item, idx) => {
-        return <ExperiencePane key={idx} positions={item.positions} employer={item.employer}/>
-    });
+    return (
+        <div className={styles.experiencePaneList}>
+            {
+                props.experiences.map((experience, i) => {
+                    return experience.positions.map((position, j) => {
+                        return <ExperiencePane handleClick={props.handleClick}
+                            key={`${i}_${j}`} 
+                            employer={experience.employer}
+                            title={position.title} 
+                            jobType={position.jobType} 
+                            startDate={position.startDate}
+                            endDate={position.endDate}
+                            location={position.location}
+                            description={position.description}
+                        />
+                    });
+                })
+            }
+        </div>
+    )
 }
 
 export default ExperiencePaneList;

@@ -47,13 +47,34 @@ const experiences = [
             {
                 title: "UI / UX Developer II",
                 jobType: "Full-time",
-                startDate: "Feb 2022",
+                startDate: new Date(2022, 2, 1),
                 //endDate: "", 
                 location: "Remote",
-                description: <p>
-                    - Plans, documents, develops, and tests computer software by applying knowledge of programming techniques and computer systems.
-                    - Writes clean, semantic HTML and CSS in conjunction with client-side JavaScript frameworks. 
-                </p>
+                description: <>
+                    <ul>
+                        <li>Plans, documents, develops, and tests computer software by applying knowledge of programming techniques and computer systems.</li>
+                        <li>Writes clean, semantic HTML and CSS in conjunction with client-side JavaScript frameworks. </li>
+                    </ul>
+                </>
+            }
+        ]
+    },
+    {
+        employer: "Netsmart",
+        positions: [
+            {
+                title: "Software Engineer",
+                jobType: "Full-time",
+                startDate: new Date(2020, 6, 1),
+                endDate: new Date(2022, 2, 1), 
+                location: "Springfield, MO",
+                description: <>
+                    <ul>
+                        <li>Participates in the software development life cycle including requirement analysis, planning, software design, development, review, testing and deployment.</li>
+                        <li>Run software tests, review results and perform root cause analyses to identify problems. </li>
+                        <li>Identify, implement and support technical solutions to deliver business requirements</li>
+                    </ul>
+                </>
             }
         ]
     }

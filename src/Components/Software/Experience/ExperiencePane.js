@@ -1,18 +1,40 @@
 
+import styles from "./Experience.module.scss"
+import {FormatDateTimeAsString, FormatDurationAsString} from '../System'
+
 function ExperiencePane(props) {
+    const startDate = FormatDateTimeAsString(props.startDate);
+    const endDate = props.endDate ? FormatDateTimeAsString(props.endDate) : 'Present';
+    const duration = props.endDate ? FormatDurationAsString(props.startDate, props.endDate) : FormatDurationAsString(props.startDate, new Date())
+    const emitDescription = (event) => {
+        event.stopPropagation(); 
+        props.handleClick(props.description)
+    }
+
     return (
-        <div>
-            <h3>{props.employer}</h3>
-            <h3>{props.positions.map((item, idx) => {
-                return <div>
-                    <h4>{item.title}</h4>
-                    <h4>{item.startDate}-{item.endDate ?? "Current"}</h4>
-                    <h5>{item.location}</h5>
-                    <h5>{item.description}</h5>
-                </div>
-            })}</h3>
+        <div className={styles.experiencePane} onClick={emitDescription}>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><h3>{props.title}</h3></td>
+                        <td><h4>{startDate} - {endDate}</h4></td>
+                    </tr>
+                    <tr>
+                        <td><h4>{props.employer}</h4></td>
+                        <td>
+                            <h5>
+                                {duration} · {props.jobType}
+                            </h5>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><h5>{props.location}</h5></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-    );
+    )
 }
 
 export default ExperiencePane;

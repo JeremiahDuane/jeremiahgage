@@ -11,9 +11,9 @@ function Software(props) {
                     <h1 className={styles.heading}>
                         {props.heading}
                     </h1>                   
-                    <div className={styles.content}>
-                        {props.children}
-                    </div>
+                        <div className={styles.content}>
+                            {props.children}
+                        </div> 
                     <div className={styles.wrapper}>
                         {props.description.front}
                     </div>

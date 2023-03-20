@@ -1,8 +1,19 @@
-import {experiences, descriptions} from '../data';
+import {experiences, descriptions} from '../Data';
+import { useState } from 'react'
 import Software from '../Software';
 import ExperiencePaneList from './ExperiencePaneList';
+import ExperienceDescriptionPane from './ExperienceDescriptionPane';
+import styles from './Experience.module.scss'
 
 function Experience(props) {
+    const [description, setDescription] = useState(null);
+    const handleClick = (value) => {
+        setDescription(null);
+        setTimeout(() => {
+            setDescription(value);
+        }, description ? 100 : 0)
+    }
+
     return (
         <Software 
             heading="experience"
@@ -10,7 +21,10 @@ function Experience(props) {
             footerPath="/blob/master/src/Components/Software/About/About.js"
             description={descriptions.experience}
         >
-            <ExperiencePaneList experiences={experiences}/>
+            <div className={styles.experience}>
+                <ExperiencePaneList experiences={experiences} handleClick={handleClick}/>
+                <ExperienceDescriptionPane description={description}/>
+            </div>
         </Software>
     );
 }

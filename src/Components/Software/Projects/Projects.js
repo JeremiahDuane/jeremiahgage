@@ -1,4 +1,4 @@
-import {descriptions} from '../data';
+import {descriptions} from '../Data';
 import ProjectsList from './ProjectsList';
 import Software from '../Software';
 

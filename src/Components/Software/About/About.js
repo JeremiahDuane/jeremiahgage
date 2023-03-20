@@ -1,4 +1,4 @@
-import {descriptions} from '../data';
+import {descriptions} from '../Data';
 import Software from '../Software';
 
 export default function About(props) {
