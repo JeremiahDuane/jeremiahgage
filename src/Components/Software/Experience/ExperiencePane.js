@@ -8,7 +8,16 @@ function ExperiencePane(props) {
     const duration = props.endDate ? FormatDurationAsString(props.startDate, props.endDate) : FormatDurationAsString(props.startDate, new Date())
     const emitDescription = (event) => {
         event.stopPropagation(); 
-        props.handleClick(props.description)
+        const experience = {
+            jobTitle: props.title, 
+            jobType: props.jobType,
+            employer: props.employer,
+            displayDate: `${startDate} - ${endDate}`,
+            duration: duration, 
+            location: props.location,
+            description: props.description
+        }
+        props.handleClick(experience)
     }
 
     return (

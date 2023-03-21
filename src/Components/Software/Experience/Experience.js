@@ -1,4 +1,3 @@
-import {experiences, descriptions} from '../Data';
 import { useState } from 'react'
 import Software from '../Software';
 import ExperiencePaneList from './ExperiencePaneList';
@@ -6,12 +5,24 @@ import ExperienceDescriptionPane from './ExperienceDescriptionPane';
 import styles from './Experience.module.scss'
 
 function Experience(props) {
-    const [description, setDescription] = useState(null);
+    const nullExperience = {
+        jobTitle: null, 
+        jobType: null,
+        employer: null,
+        displayDate: null,
+        duration: null, 
+        location: null,
+        description: null
+    }
+    const [selectedExperience, setSelectedExperience] = useState(nullExperience);
     const handleClick = (value) => {
-        setDescription(null);
-        setTimeout(() => {
-            setDescription(value);
-        }, description ? 100 : 0)
+        console.log(value, selectedExperience)
+        if (value.jobTitle != selectedExperience.jobTitle) {
+            setSelectedExperience(nullExperience);
+            setTimeout(() => {
+                setSelectedExperience(value);
+            }, selectedExperience ? 100 : 0)
+        }
     }
 
     return (
@@ -19,11 +30,19 @@ function Experience(props) {
             heading="experience"
             demoPath="/repos/anchoredapplications/jeremiahgage/contents/src/Components/Software/About/"
             footerPath="/blob/master/src/Components/Software/About/About.js"
-            description={descriptions.experience}
+            description={props.descriptions.experience}
         >
             <div className={styles.experience}>
-                <ExperiencePaneList experiences={experiences} handleClick={handleClick}/>
-                <ExperienceDescriptionPane description={description}/>
+                <ExperiencePaneList experiences={props.experiences} handleClick={handleClick}/>
+                <ExperienceDescriptionPane 
+                    jobTitle={selectedExperience.jobTitle}
+                    jobType={selectedExperience.jobType}
+                    employer={selectedExperience.employer}
+                    displayDate={selectedExperience.displayDate}
+                    duration={selectedExperience.duration} 
+                    location={selectedExperience.location}
+                    description={selectedExperience.description}
+                />
             </div>
         </Software>
     );

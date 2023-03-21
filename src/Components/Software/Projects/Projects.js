@@ -1,4 +1,3 @@
-import {descriptions} from '../Data';
 import ProjectsList from './ProjectsList';
 import Software from '../Software';
 
@@ -8,7 +7,7 @@ function Projects(props) {
             heading="projects"
             demoPath="/repos/anchoredapplications/jeremiahgage/contents/src/Components/Software/Projects/"
             footerPath="/blob/master/src/Components/Software/Projects/Projects.js"
-            description={descriptions.skills}
+            description={props.descriptions.skills}
         >
             <ProjectsList projects={props.projects}/>
         </Software>

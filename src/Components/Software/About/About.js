@@ -1,4 +1,3 @@
-import {descriptions} from '../Data';
 import Software from '../Software';
 
 export default function About(props) {
@@ -7,7 +6,7 @@ export default function About(props) {
             heading="about"
             demoPath="/repos/anchoredapplications/jeremiahgage/contents/src/Components/Software/About/"
             footerPath="/blob/master/src/Components/Software/About/About.js"
-            description={descriptions.about}
+            description={props.descriptions.about}
         />
     );
 }

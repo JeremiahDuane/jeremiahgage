@@ -77,7 +77,75 @@ const experiences = [
                 </>
             }
         ]
+    },
+    {
+        employer: "College of the Ozarks",
+        positions: [
+            {
+                title: "Math and Physics Teacher's Aide",
+                jobType: "Part-time",
+                startDate: new Date(2017, 8, 1),
+                endDate: new Date(2020, 5, 1), 
+                location: "Point Lookout, MO",
+                description: <>
+                    Worked as a lab assistant in the College's mathematics department. Assisted in instructing students in the areas of Calculus, Discrete Math, Trigonometry, and Statistics.
+                </>
+            }
+        ]
+    },
+    {
+        employer: "Self-Employed",
+        positions: [
+            {
+                title: "Private Mathematics Tutoring",
+                jobType: "Full-time",
+                startDate: new Date(2017, 8, 1),
+                endDate: new Date(2019, 8, 1), 
+                location: "Branson, MO",
+                description: <>
+                    <ul>
+                        <li>Assists high school students in the field of mathematics. Works with the following courses: Algebra I, Trigonometry, Pre-calculus </li>
+                        <li>Meets with students weekly, developing needed skills and bringing students to a higher academic understanding </li>
+                    </ul>
+                </>
+            }
+        ]
+    },
+    {
+        employer: "Gateway Wireless LLC",
+        positions: [
+            {
+                title: "Sales Advocate",
+                jobType: "Full-time",
+                startDate: new Date(2018, 5, 1),
+                endDate: new Date(2018, 8, 1), 
+                location: "Branson, MO",
+                description: <>
+                    Worked as a sales advocate with Gateway Wireless LLC, a Cricket Wireless authorized retailer. Acted with a team and individually to advocate the Cricket brand and to perform sales. Developed connections through customer interactions to create an integrated sales network. 
+                </>
+            }
+        ]
+    },
+    {
+        employer: "Cold Stone Creamery",
+        positions: [
+            {
+                title: "Crew Member",
+                jobType: "Part-time",
+                startDate: new Date(2015, 2, 1),
+                endDate: new Date(2017, 8, 1), 
+                location: "Branson, MO",
+                description: <>
+                        Worked as both crew member and cashier. 
+                    <ul>
+                        <li>Acted as a receptionist while managing the cash register. Greeted guests and took their orders. </li>
+                        <li>Worked as a server by preparing food and serving it to guests. </li>
+                    </ul>
+                </>
+            }
+        ]
     }
 ]
 
-export { descriptions, experiences };
+const data = {experiences, descriptions, urls}
+export default data;
