@@ -15,13 +15,14 @@ function ExperiencePane(props) {
             displayDate: `${startDate} - ${endDate}`,
             duration: duration, 
             location: props.location,
-            description: props.description
+            description: props.description,
+            skills: props.skills
         }
         props.handleClick(experience)
     }
 
     return (
-        <div className={styles.experiencePane} onClick={emitDescription}>
+        <div className={[styles.experiencePane, styles.experienceModal].join(" ")} onClick={emitDescription}>
             <table>
                 <tbody>
                     <tr>

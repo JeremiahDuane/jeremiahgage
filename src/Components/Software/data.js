@@ -1,3 +1,9 @@
+import DotNetCore from "../../imgs/DotNetCore"
+import HTML5 from "../../imgs/HTML5"
+import JavaScript from "../../imgs/JavaScript"
+import Telerik from "../../imgs/Telerik"
+import TypeScript from "../../imgs/TypeScript"
+
 const urls = {
     wikipedia: {
         SOLID: "https://simple.wikipedia.org/wiki/SOLID_(object-oriented_design)#SOLID_Principles"
@@ -18,10 +24,11 @@ const descriptions = {
                     <h3>
                         Some would say a good software developer writes good code. I would posit that good code writes itself. 
                         Through the minimazation of redundancy by commitment to 
-                        &nbsp;<a href={urls.wikipedia.SOLID} target="_blank" onClick={(e) => {e.stopPropagation()}}>SOLID</a>&nbsp;
+                        &nbsp;<a href={urls.wikipedia.SOLID} target="_blank" rel="noreferrer" onClick={(e) => {e.stopPropagation()}}>SOLID</a>&nbsp;
                         priciples, and the reuse of code through component libraries, the development required by developers tends to zero. A good developer, then, can hardly be characterized
                         as a developer at all, rather, a thinker, a creator, an engineer. 
                     </h3>
+                    <br/>
                     <h3>
                         This portfolio is a small example of such code. Do you want to take a closer look? Click anywhere in this pane to begin. 
                     </h3>
@@ -55,7 +62,8 @@ const experiences = [
                         <li>Plans, documents, develops, and tests computer software by applying knowledge of programming techniques and computer systems.</li>
                         <li>Writes clean, semantic HTML and CSS in conjunction with client-side JavaScript frameworks. </li>
                     </ul>
-                </>
+                </>,
+                skills: []
             }
         ]
     },
@@ -74,7 +82,14 @@ const experiences = [
                         <li>Run software tests, review results and perform root cause analyses to identify problems. </li>
                         <li>Identify, implement and support technical solutions to deliver business requirements</li>
                     </ul>
-                </>
+                </>,
+                skills: [
+                    {name: "HTML 5", image:HTML5()},
+                    {name: "JavaScript", image:JavaScript()},
+                    {name: "TypeScript", image:TypeScript()},
+                    {name: "Kendo UI", image:Telerik()},
+                    {name: ".NET Core", image:DotNetCore()},
+                ]
             }
         ]
     },
@@ -89,7 +104,8 @@ const experiences = [
                 location: "Point Lookout, MO",
                 description: <>
                     Worked as a lab assistant in the College's mathematics department. Assisted in instructing students in the areas of Calculus, Discrete Math, Trigonometry, and Statistics.
-                </>
+                </>,
+                skills: []
             }
         ]
     },
@@ -107,7 +123,8 @@ const experiences = [
                         <li>Assists high school students in the field of mathematics. Works with the following courses: Algebra I, Trigonometry, Pre-calculus </li>
                         <li>Meets with students weekly, developing needed skills and bringing students to a higher academic understanding </li>
                     </ul>
-                </>
+                </>,
+                skills: []
             }
         ]
     },
@@ -122,7 +139,8 @@ const experiences = [
                 location: "Branson, MO",
                 description: <>
                     Worked as a sales advocate with Gateway Wireless LLC, a Cricket Wireless authorized retailer. Acted with a team and individually to advocate the Cricket brand and to perform sales. Developed connections through customer interactions to create an integrated sales network. 
-                </>
+                </>,
+                skills: []
             }
         ]
     },
@@ -141,7 +159,8 @@ const experiences = [
                         <li>Acted as a receptionist while managing the cash register. Greeted guests and took their orders. </li>
                         <li>Worked as a server by preparing food and serving it to guests. </li>
                     </ul>
-                </>
+                </>,
+                skills: []
             }
         ]
     }

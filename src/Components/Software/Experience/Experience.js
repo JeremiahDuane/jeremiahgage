@@ -12,12 +12,12 @@ function Experience(props) {
         displayDate: null,
         duration: null, 
         location: null,
-        description: null
+        description: null,
+        skills: []
     }
     const [selectedExperience, setSelectedExperience] = useState(nullExperience);
     const handleClick = (value) => {
-        console.log(value, selectedExperience)
-        if (value.jobTitle != selectedExperience.jobTitle) {
+        if (value.jobTitle !== selectedExperience.jobTitle) {
             setSelectedExperience(nullExperience);
             setTimeout(() => {
                 setSelectedExperience(value);
@@ -26,25 +26,28 @@ function Experience(props) {
     }
 
     return (
-        <Software 
-            heading="experience"
-            demoPath="/repos/anchoredapplications/jeremiahgage/contents/src/Components/Software/About/"
-            footerPath="/blob/master/src/Components/Software/About/About.js"
-            description={props.descriptions.experience}
-        >
-            <div className={styles.experience}>
-                <ExperiencePaneList experiences={props.experiences} handleClick={handleClick}/>
-                <ExperienceDescriptionPane 
-                    jobTitle={selectedExperience.jobTitle}
-                    jobType={selectedExperience.jobType}
-                    employer={selectedExperience.employer}
-                    displayDate={selectedExperience.displayDate}
-                    duration={selectedExperience.duration} 
-                    location={selectedExperience.location}
-                    description={selectedExperience.description}
-                />
-            </div>
-        </Software>
+        <div className={styles.experiences}>
+            <Software 
+                heading="experience"
+                demoPath="/repos/anchoredapplications/jeremiahgage/contents/src/Components/Software/About/"
+                footerPath="/blob/master/src/Components/Software/About/About.js"
+                description={props.descriptions.experience}
+            >
+                <div className={styles.experience}>
+                    <ExperiencePaneList experiences={props.experiences} handleClick={handleClick}/>
+                    <ExperienceDescriptionPane 
+                        jobTitle={selectedExperience.jobTitle}
+                        jobType={selectedExperience.jobType}
+                        employer={selectedExperience.employer}
+                        displayDate={selectedExperience.displayDate}
+                        duration={selectedExperience.duration} 
+                        location={selectedExperience.location}
+                        description={selectedExperience.description}
+                        skills={selectedExperience.skills}
+                    />
+                </div>
+            </Software>
+        </div>
     );
 }
 

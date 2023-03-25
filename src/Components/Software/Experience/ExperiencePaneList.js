@@ -16,6 +16,7 @@ function ExperiencePaneList(props) {
                             endDate={position.endDate}
                             location={position.location}
                             description={position.description}
+                            skills={position.skills}
                         />
                     });
                 })
