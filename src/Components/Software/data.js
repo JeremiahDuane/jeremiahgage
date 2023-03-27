@@ -1,8 +1,4 @@
-import DotNetCore from "../../imgs/DotNetCore"
-import HTML5 from "../../imgs/HTML5"
-import JavaScript from "../../imgs/JavaScript"
-import Telerik from "../../imgs/Telerik"
-import TypeScript from "../../imgs/TypeScript"
+import {DotNetCore, HTML5, JavaScript, Telerik, TypeScript, DynamoDB, React, Vue, GoogleTagManager, JQuery, LaTeX, Mathematica, Excel, PSPP, MatLab } from "../../imgs/SVGs"
 
 const urls = {
     wikipedia: {
@@ -63,7 +59,13 @@ const experiences = [
                         <li>Writes clean, semantic HTML and CSS in conjunction with client-side JavaScript frameworks. </li>
                     </ul>
                 </>,
-                skills: []
+                skills: [
+                    {name: "JavaScript", image:JavaScript()},
+                    {name: "HTML 5", image:HTML5()},
+                    {name: "jQuery", image:JQuery()},
+                    {name: "Vue JS", image:Vue()},
+                    {name: "Google Tag Manager", image:GoogleTagManager()},
+                ]
             }
         ]
     },
@@ -85,7 +87,8 @@ const experiences = [
                 </>,
                 skills: [
                     {name: "HTML 5", image:HTML5()},
-                    {name: "JavaScript", image:JavaScript()},
+                    {name: "Dynamo DB", image:DynamoDB()},
+                    {name: "ReactJS", image:React()},
                     {name: "TypeScript", image:TypeScript()},
                     {name: "Kendo UI", image:Telerik()},
                     {name: ".NET Core", image:DotNetCore()},
@@ -105,7 +108,13 @@ const experiences = [
                 description: <>
                     Worked as a lab assistant in the College's mathematics department. Assisted in instructing students in the areas of Calculus, Discrete Math, Trigonometry, and Statistics.
                 </>,
-                skills: []
+                skills: [
+                    {name: "LaTeX", image:LaTeX()},
+                    {name: "Mathamatica", image:Mathematica()},
+                    {name: "Excel", image:Excel()},
+                    {name: "PSPP", image:PSPP()},
+                    {name: "MatLab", image:MatLab()},
+                ]
             }
         ]
     },

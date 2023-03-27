@@ -1,5 +1,5 @@
 import styles from './StarMeter.module.scss'
-import SvgStarMeter from '../../../imgs/StarMeter'
+import {StarMeter as StarMeterSVG} from '../../../imgs/SVGs'
 
 function StarMeter(props) {
     return (
@@ -7,7 +7,7 @@ function StarMeter(props) {
             <div className={styles.fill} style={{width: `${props.value}%`}}></div>
             <div className={styles.overlay__wrapper}>
                 <div className={styles.overlay}>
-                    <SvgStarMeter color="#FFFFFF"/>
+                    <StarMeterSVG color="#FFFFFF"/>
                 </div>    
             </div>    
         </div>

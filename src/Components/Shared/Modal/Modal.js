@@ -1,5 +1,5 @@
 import styles from './Modal.module.scss'
-import Close from '../../../imgs/X'
+import { Close } from '../../../imgs/SVGs'
 function Modal(props) {
     return (
         <div className={styles.modal}>

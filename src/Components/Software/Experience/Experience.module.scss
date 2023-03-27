@@ -29,7 +29,7 @@
     }
 
     .experienceDescriptionPane {
-        flex: 2;
+        flex: 1;
         padding: 3em;
         text-align: left;
         display: flex;
@@ -42,7 +42,7 @@
     }
 
     .experiencePaneList {
-        flex: 2;
+        flex: 1;
         display: flex;
         flex-direction: column;
         gap: 0.75em;
@@ -74,6 +74,9 @@
     h4 {
         font-weight: normal;
         font-size: 1.2em;
+    }
+    .skillsSpacer {
+        height: 100%;
     }
 
     td:nth-of-type(odd) {
