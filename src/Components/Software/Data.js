@@ -1,9 +1,49 @@
-import {DotNetCore, HTML5, JavaScript, Telerik, TypeScript, DynamoDB, React, Vue, GoogleTagManager, JQuery, LaTeX, Mathematica, PSPP, MatLab, Geogabra } from "../../imgs/SVGs"
+import {
+    DotNetCore, 
+    HTML5, 
+    JavaScript, 
+    Telerik, 
+    TypeScript, 
+    DynamoDB, 
+    React, 
+    Vue, 
+    GoogleTagManager, 
+    JQuery, 
+    LaTeX, 
+    Mathematica, 
+    PSPP, 
+    MatLab, 
+    Geogabra, 
+    GoLang, 
+    Thymeleaf,
+    Docker
+} from "../../imgs/SVGs"
 
 const urls = {
     wikipedia: {
         SOLID: "https://simple.wikipedia.org/wiki/SOLID_(object-oriented_design)#SOLID_Principles"
     }
+}
+
+const skills = {
+    JavaScript: {name: "JavaScript", image:JavaScript()},
+    HTML5: {name: "HTML 5", image:HTML5()},
+    JQuery: {name: "jQuery", image:JQuery()},
+    VueJS: {name: "VueJS", image:Vue()},
+    GoogleTagManager: {name: "Google Tag Manager", image:GoogleTagManager()},
+    DynamoDB: {name: "AWS DynamoDB", image:DynamoDB()},
+    ReactJs: {name: "ReactJS", image:React()},
+    TypeScript: {name: "TypeScript", image:TypeScript()},
+    Telerik: {name: "Kendo UI", image:Telerik()},
+    DotNetCore: {name: ".NET Core", image:DotNetCore()},
+    LaTeX: {name: "LaTeX", image:LaTeX()},
+    Mathematica: {name: "Mathamatica", image:Mathematica()},
+    PSPP: {name: "PSPP", image:PSPP()},
+    MatLab: {name: "MatLab", image:MatLab()},
+    Geogabra: {name: "Geogabra", image:Geogabra()},
+    GoLang: {name: "GoLang", image:GoLang()},
+    Thymeleaf: {name: "Thymeleaf", image:Thymeleaf()},
+    Docker: {name: "Docker", image:Docker()},
 }
 
 const descriptions = {
@@ -26,7 +66,7 @@ const descriptions = {
                     </h3>
                     <br/>
                     <h3>
-                        This portfolio is a small example of such code. Do you want to take a closer look? Click anywhere in this pane to begin. 
+                        This portfolio is a small example of good code. Do you want to take a closer look? Click anywhere in this pane to begin. 
                     </h3>
                 </>,
         back: <>
@@ -60,11 +100,14 @@ const experiences = [
                     </ul>
                 </>,
                 skills: [
-                    {name: "JavaScript", image:JavaScript()},
-                    {name: "HTML 5", image:HTML5()},
-                    {name: "jQuery", image:JQuery()},
-                    {name: "Vue JS", image:Vue()},
-                    {name: "Google Tag Manager", image:GoogleTagManager()},
+                    skills.HTML5, 
+                    skills.VueJS,
+                    skills.TypeScript,
+                    skills.JQuery,
+                    skills.GoogleTagManager,
+                    skills.JavaScript,
+                    skills.Thymeleaf,
+                    skills.Docker,
                 ]
             }
         ]
@@ -86,12 +129,16 @@ const experiences = [
                     </ul>
                 </>,
                 skills: [
-                    {name: "HTML 5", image:HTML5()},
-                    {name: "Dynamo DB", image:DynamoDB()},
-                    {name: "ReactJS", image:React()},
-                    {name: "TypeScript", image:TypeScript()},
-                    {name: "Kendo UI", image:Telerik()},
-                    {name: ".NET Core", image:DotNetCore()},
+                    skills.DynamoDB,
+                    skills.ReactJs,
+                    skills.TypeScript,
+                    skills.Telerik,
+                    skills.DotNetCore,
+                    skills.GoLang,
+                    skills.GoogleTagManager,
+                    skills.HTML5, 
+                    skills.JavaScript,
+                    skills.JQuery,
                 ]
             }
         ]
@@ -109,11 +156,11 @@ const experiences = [
                     Worked as a lab assistant in the College's mathematics department. Assisted in instructing students in the areas of Calculus, Discrete Math, Trigonometry, and Statistics.
                 </>,
                 skills: [
-                    {name: "LaTeX", image:LaTeX()},
-                    {name: "Mathamatica", image:Mathematica()},
-                    {name: "PSPP", image:PSPP()},
-                    {name: "MatLab", image:MatLab()},
-                    {name: "Geogabra", image:Geogabra()},
+                    skills.LaTeX,
+                    skills.Mathematica,
+                    skills.PSPP,
+                    skills.MatLab,
+                    skills.Geogabra,
                 ]
             }
         ]

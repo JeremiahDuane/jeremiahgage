@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Octokit, App } from "octokit";
+import { Octokit } from "octokit";
 import axios, { CancelToken } from "axios";
 import styles from './GitHubCodeDemo.module.scss'
 import cfg from '../../../config';

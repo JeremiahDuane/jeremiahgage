@@ -3,41 +3,37 @@ function Anchor(props) {
     const strokeWidth = 25
 
     return (
-
-            <div className="App">
-                <svg id="eqh7Rk2jaXg1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="-100 -100 500 500" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
-                    <circle cx="150" cy="150" r="200" stroke="black " strokeWidth={strokeWidth} fill="white" />
-                    <path fill="none" stroke={color} strokeWidth={strokeWidth} d="M42.5698,162.389343c-5.945131,1.668956-19.817104,5.563185-19.817104,5.563185c10.864908,82.045864,61.314534,90.574905,95.027171,62.997613C138.652829,213.875838,147.571023,176.888069,150,150l-.000001-139.181562" transform="matrix(-1 0 0 1 300 39.600707)"/>
-                    <path fill="none" stroke={color} strokeWidth={strokeWidth} d="M42.5698,162.389343c-5.945131,1.668956-19.817104,5.563185-19.817104,5.563185c10.864908,82.045864,61.314534,90.574905,95.027171,62.997613C138.652829,213.875838,147.571023,176.888069,150,150l-.000001-139.181562" transform="translate(.005784 39.600707)"/>
-                    <path fill="none" stroke={color} strokeWidth={strokeWidth} d="M100.376294,127.20038c48.324711-20.845953,82.535557-5.492715,99.717779,0" transform="matrix(1.795425 0 0 1.191964-119.965407-68.072125)"/>
-                    <ellipse fill="none" stroke={color} strokeWidth={strokeWidth} rx="17.5" ry="17.5" transform="translate(150 32.919145)"/>
-                </svg>
-            </div>
-
+        <div className="App">
+            <svg id="eqh7Rk2jaXg1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="-100 -100 500 500" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
+                <circle cx="150" cy="150" r="200" stroke="black " strokeWidth={strokeWidth} fill="white" />
+                <path fill="none" stroke={color} strokeWidth={strokeWidth} d="M42.5698,162.389343c-5.945131,1.668956-19.817104,5.563185-19.817104,5.563185c10.864908,82.045864,61.314534,90.574905,95.027171,62.997613C138.652829,213.875838,147.571023,176.888069,150,150l-.000001-139.181562" transform="matrix(-1 0 0 1 300 39.600707)"/>
+                <path fill="none" stroke={color} strokeWidth={strokeWidth} d="M42.5698,162.389343c-5.945131,1.668956-19.817104,5.563185-19.817104,5.563185c10.864908,82.045864,61.314534,90.574905,95.027171,62.997613C138.652829,213.875838,147.571023,176.888069,150,150l-.000001-139.181562" transform="translate(.005784 39.600707)"/>
+                <path fill="none" stroke={color} strokeWidth={strokeWidth} d="M100.376294,127.20038c48.324711-20.845953,82.535557-5.492715,99.717779,0" transform="matrix(1.795425 0 0 1.191964-119.965407-68.072125)"/>
+                <ellipse fill="none" stroke={color} strokeWidth={strokeWidth} rx="17.5" ry="17.5" transform="translate(150 32.919145)"/>
+            </svg>
+        </div>
     );
 }
 
 function Close(props) {
     return (
-
-            <svg id="epqWjPi76bx1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
-                <line x1="-140.169332" y1="-140.169332" x2="140.169333" y2="140.169332" transform="matrix(.929529 0 0 0.892617 150.235184 150.047037)" fill="none" stroke="#000" strokeWidth="40" strokeLinecap="round"/>
-                <line x1="-140.169332" y1="140.169332" x2="140.169333" y2="-140.169332" transform="matrix(.931207 0 0 0.929529 150 150.047037)" fill="none" stroke="#000" strokeWidth="40" strokeLinecap="round"/>
-            </svg>
-
+        <svg id="epqWjPi76bx1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
+            <line x1="-140.169332" y1="-140.169332" x2="140.169333" y2="140.169332" transform="matrix(.929529 0 0 0.892617 150.235184 150.047037)" fill="none" stroke="#000" strokeWidth="40" strokeLinecap="round"/>
+            <line x1="-140.169332" y1="140.169332" x2="140.169333" y2="-140.169332" transform="matrix(.931207 0 0 0.929529 150 150.047037)" fill="none" stroke="#000" strokeWidth="40" strokeLinecap="round"/>
+        </svg>
     );
 }
 
 function CircleMeter(props) {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                <defs>
-                    <linearGradient id="GradientColor">
-                    <stop offset="0%" stopColor="#e91e63" />
-                    <stop offset="100%" stopColor="#673ab7" />
-                    </linearGradient>
-                </defs>
-                <circle cx="80" cy="80" r="70" strokeLinecap="round" />
+            <defs>
+                <linearGradient id="GradientColor">
+                <stop offset="0%" stopColor="#e91e63" />
+                <stop offset="100%" stopColor="#673ab7" />
+                </linearGradient>
+            </defs>
+            <circle cx="80" cy="80" r="70" strokeLinecap="round" />
         </svg>
     );
 }
@@ -278,6 +274,47 @@ function Geogabra(props) {
     );
 }
 
+function GoLang(props) {
+    return (
+        <svg width="100" height="100" x="0px" y="0px" viewBox="0 0 205.4 76.7" xmlSpace="preserve">
+            <path fill="#00ACD7" d="M15.5,23.2c-0.4,0-0.5-0.2-0.3-0.5l2.1-2.7c0.2-0.3,0.7-0.5,1.1-0.5h35.7c0.4,0,0.5,0.3,0.3,0.6l-1.7,2.6      c-0.2,0.3-0.7,0.6-1,0.6L15.5,23.2z"/>
+            <path fill="#00ACD7" d="M0.4,32.4c-0.4,0-0.5-0.2-0.3-0.5l2.1-2.7c0.2-0.3,0.7-0.5,1.1-0.5h45.6c0.4,0,0.6,0.3,0.5,0.6l-0.8,2.4      c-0.1,0.4-0.5,0.6-0.9,0.6L0.4,32.4z"/>
+            <path fill="#00ACD7" d="M24.6,41.6c-0.4,0-0.5-0.3-0.3-0.6l1.4-2.5c0.2-0.3,0.6-0.6,1-0.6h20c0.4,0,0.6,0.3,0.6,0.7L47.1,41      c0,0.4-0.4,0.7-0.7,0.7L24.6,41.6z"/>
+            <path fill="#00ACD7" d="M128.4,21.4c-6.3,1.6-10.6,2.8-16.8,4.4c-1.5,0.4-1.6,0.5-2.9-1c-1.5-1.7-2.6-2.8-4.7-3.8       c-6.3-3.1-12.4-2.2-18.1,1.5c-6.8,4.4-10.3,10.9-10.2,19c0.1,8,5.6,14.6,13.5,15.7c6.8,0.9,12.5-1.5,17-6.6       c0.9-1.1,1.7-2.3,2.7-3.7c-3.6,0-8.1,0-19.3,0c-2.1,0-2.6-1.3-1.9-3c1.3-3.1,3.7-8.3,5.1-10.9c0.3-0.6,1-1.6,2.5-1.6       c5.1,0,23.9,0,36.4,0c-0.2,2.7-0.2,5.4-0.6,8.1c-1.1,7.2-3.8,13.8-8.2,19.6c-7.2,9.5-16.6,15.4-28.5,17       c-9.8,1.3-18.9-0.6-26.9-6.6c-7.4-5.6-11.6-13-12.7-22.2c-1.3-10.9,1.9-20.7,8.5-29.3c7.1-9.3,16.5-15.2,28-17.3       c9.4-1.7,18.4-0.6,26.5,4.9c5.3,3.5,9.1,8.3,11.6,14.1C130,20.6,129.6,21.1,128.4,21.4z"/>
+            <path fill="#00ACD7" d="M161.5,76.7c-9.1-0.2-17.4-2.8-24.4-8.8c-5.9-5.1-9.6-11.6-10.8-19.3c-1.8-11.3,1.3-21.3,8.1-30.2       c7.3-9.6,16.1-14.6,28-16.7c10.2-1.8,19.8-0.8,28.5,5.1c7.9,5.4,12.8,12.7,14.1,22.3c1.7,13.5-2.2,24.5-11.5,33.9       c-6.6,6.7-14.7,10.9-24,12.8C166.8,76.3,164.1,76.4,161.5,76.7z M185.3,36.3c-0.1-1.3-0.1-2.3-0.3-3.3       c-1.8-9.9-10.9-15.5-20.4-13.3c-9.3,2.1-15.3,8-17.5,17.4c-1.8,7.8,2,15.7,9.2,18.9c5.5,2.4,11,2.1,16.3-0.6       C180.5,51.3,184.8,44.9,185.3,36.3z"/>
+        </svg>
+    );
+}
+
+function Thymeleaf(props) {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="200.000000pt" height="200.000000pt" viewBox="0 0 200.000000 200.000000" preserveAspectRatio="xMidYMid meet">
+            <g transform="translate(0.000000,200.000000) scale(0.100000,-0.100000)" fill="#388200" stroke="none">
+            <path d="M81 1982 c-19 -9 -44 -30 -55 -45 -21 -28 -21 -36 -24 -920 -3 -992 -5 -955 62 -997 33 -20 45 -20 937 -20 867 0 905 1 935 19 67 41 64 -7 64 984 l0 894 -23 34 c-49 73 10 69 -977 69 -823 0 -887 -1 -919 -18z m1528 -464 c-215 -464 -347 -700 -481 -855 -126 -148 -290 -227 -417 -203 -145 27 -220 107 -191 204 18 63 84 123 320 291 355 254 554 423 746 636 59 65 108 119 110 119 1 0 -38 -87 -87 -192z m-206 -57 c-168 -165 -308 -278 -583 -473 -241 -171 -313 -237 -333 -305 l-14 -47 -19 54 c-26 77 -24 180 5 247 43 98 109 143 350 239 236 95 501 245 676 383 28 22 52 40 55 40 3 0 -59 -62 -137 -138z"/>
+            </g>
+        </svg>
+    );
+}
+
+function Docker(props) {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="553.000000pt" height="412.000000pt" viewBox="0 0 553.000000 412.000000" preserveAspectRatio="xMidYMid meet">
+            <g transform="translate(0.000000,412.000000) scale(0.100000,-0.100000)" fill="#066da5" stroke="none">
+                <path d="M2660 3560 l0 -230 250 0 250 0 0 230 0 230 -250 0 -250 0 0 -230z"/>
+                <path d="M1470 3015 l0 -225 250 0 250 0 0 225 0 225 -250 0 -250 0 0 -225z"/>
+                <path d="M2070 3015 l0 -225 245 0 245 0 0 225 0 225 -245 0 -245 0 0 -225z"/>
+                <path d="M2660 3015 l0 -225 250 0 250 0 0 225 0 225 -250 0 -250 0 0 -225z"/>
+                <path d="M4232 3037 c-96 -153 -133 -281 -134 -457 -1 -118 16 -199 61 -297 l29 -61 -51 -21 c-151 -60 -8 -56 -1894 -59 l-1722 -2 -8 -38 c-4 -20 -7 -107 -7 -192 6 -587 293 -1084 764 -1320 322 -161 722 -211 1240 -154 415 46 791 167 1100 354 403 243 704 575 918 1011 l77 156 125 11 c304 27 464 131 592 386 22 43 35 82 30 85 -5 3 -38 25 -74 48 -103 68 -187 87 -400 87 l-176 1 -11 52 c-34 173 -194 368 -397 486 -5 3 -33 -31 -62 -76z"/>
+                <path d="M880 2465 l0 -225 250 0 250 0 0 225 0 225 -250 0 -250 0 0 -225z"/>
+                <path d="M1470 2465 l0 -225 250 0 250 0 0 225 0 225 -250 0 -250 0 0 -225z"/>
+                <path d="M2070 2465 l0 -225 245 0 245 0 0 225 0 225 -245 0 -245 0 0 -225z"/>
+                <path d="M2660 2465 l0 -225 250 0 250 0 0 225 0 225 -250 0 -250 0 0 -225z"/>
+                <path d="M3250 2465 l0 -225 250 0 250 0 0 225 0 225 -250 0 -250 0 0 -225z"/>
+            </g>
+        </svg>
+    );
+}
+
 export { 
     Anchor, 
     Close, 
@@ -297,5 +334,8 @@ export {
     Excel, 
     PSPP, 
     MatLab,
-    Geogabra
+    Geogabra,
+    GoLang,
+    Thymeleaf,
+    Docker
 };
