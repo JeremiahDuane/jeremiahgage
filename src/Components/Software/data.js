@@ -1,4 +1,4 @@
-import {DotNetCore, HTML5, JavaScript, Telerik, TypeScript, DynamoDB, React, Vue, GoogleTagManager, JQuery, LaTeX, Mathematica, Excel, PSPP, MatLab } from "../../imgs/SVGs"
+import {DotNetCore, HTML5, JavaScript, Telerik, TypeScript, DynamoDB, React, Vue, GoogleTagManager, JQuery, LaTeX, Mathematica, PSPP, MatLab, Geogabra } from "../../imgs/SVGs"
 
 const urls = {
     wikipedia: {
@@ -111,9 +111,9 @@ const experiences = [
                 skills: [
                     {name: "LaTeX", image:LaTeX()},
                     {name: "Mathamatica", image:Mathematica()},
-                    {name: "Excel", image:Excel()},
                     {name: "PSPP", image:PSPP()},
                     {name: "MatLab", image:MatLab()},
+                    {name: "Geogabra", image:Geogabra()},
                 ]
             }
         ]

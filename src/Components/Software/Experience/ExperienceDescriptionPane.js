@@ -14,7 +14,14 @@ function ExperienceDescriptionPane(props) {
                     </div>
 
                     <span className={styles.skillsSpacer}/>
-                    <Skills skills={props.skills}/>
+                    {props.skills.length > 0 ? 
+                        <>
+                            <h3>Technologies:</h3>
+                            <br/>
+                            <Skills skills={props.skills}/>
+                        </>
+                        : null
+                    }
                 </>      
             : null
             }    
