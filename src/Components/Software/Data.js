@@ -19,7 +19,8 @@ import {
     Docker,
     MathAndPhysicsClub,
     SigmaZeta,
-    EducationalTestingService
+    EducationalTestingService,
+    AssociationForComputingMachinery
 } from "../../imgs/SVGs"
 
 const urls = {
@@ -49,9 +50,10 @@ const skills = {
     Docker: {subtitle: "Docker", image:Docker()},
 }
 const decorations = {
-    MathAndPhysicsClubPresident: {title: "President (2019-2020)", subtitle: "Math and Physics Club", image:MathAndPhysicsClub()},
-    SigmaZetaPresident: {title: "President (2020)", subtitle: "ΣΖ Honor Society", tooltip: "Sigma Zeta Honor Society Beta-Phi Chapter", link:"", image:SigmaZeta()},
-    MajorFieldExam: {title: "189/200", subtitle: "Major Field Exam", tooltip: "Major Field Exam for Mathematics", link:"", image:EducationalTestingService()},
+    MathAndPhysicsClubPresident: {title: "President", dates:"2019-2020", subtitle: "Math & Physics Club", image:MathAndPhysicsClub()},
+    SigmaZetaPresident: {title: "President", dates:"2020", subtitle: "ΣΖ Honor Society", tooltip: "Sigma Zeta Honor Society Beta-Phi Chapter", link:"", image:SigmaZeta()},
+    MajorFieldExam: {title: "189/200", dates:"2020", subtitle: "Major Field Exam", tooltip: "Major Field Exam for Mathematics", link:"", image:EducationalTestingService()},
+    AssociationForComputingMachinery: {title: "Vice-President", dates:"2018-2019", subtitle: "ACM Club", tooltip: "Association for Computing Machinery", link:"", image:AssociationForComputingMachinery()},
 }
 const descriptions = {
     skills: {
@@ -246,6 +248,7 @@ const school = {
         decorations.MajorFieldExam,
         decorations.MathAndPhysicsClubPresident,
         decorations.SigmaZetaPresident,
+        decorations.AssociationForComputingMachinery
     ],
 }
 const data = {experiences, descriptions, urls, school}

@@ -9,9 +9,12 @@ export default function Skill(props) {
                         {props.image}
                     </a> )    
                 : props.image
-            }        
-            <h3>{props.title}</h3>
-            <h4>{props.subtitle}</h4>
+            }   
+            <div>            
+                <h3>{props.title}</h3>
+                <h5>{props.dates}</h5>
+                <div>{props.subtitle}</div>
+            </div>     
         </div>
     );
 }

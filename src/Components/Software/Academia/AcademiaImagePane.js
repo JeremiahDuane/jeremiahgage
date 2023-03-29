@@ -1,5 +1,5 @@
 import styles from './Academia.module.scss'
-import ImagePane from './ImagePane';
+import ImagePane from '../../../imgs/ImagePane';
 
 function AcademiaImagePane(props) {
     return (
