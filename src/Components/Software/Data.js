@@ -16,7 +16,10 @@ import {
     Geogabra, 
     GoLang, 
     Thymeleaf,
-    Docker
+    Docker,
+    MathAndPhysicsClub,
+    SigmaZeta,
+    EducationalTestingService
 } from "../../imgs/SVGs"
 
 const urls = {
@@ -26,26 +29,30 @@ const urls = {
 }
 
 const skills = {
-    JavaScript: {name: "JavaScript", image:JavaScript()},
-    HTML5: {name: "HTML 5", image:HTML5()},
-    JQuery: {name: "jQuery", image:JQuery()},
-    VueJS: {name: "VueJS", image:Vue()},
-    GoogleTagManager: {name: "Google Tag Manager", image:GoogleTagManager()},
-    DynamoDB: {name: "AWS DynamoDB", image:DynamoDB()},
-    ReactJs: {name: "ReactJS", image:React()},
-    TypeScript: {name: "TypeScript", image:TypeScript()},
-    Telerik: {name: "Kendo UI", image:Telerik()},
-    DotNetCore: {name: ".NET Core", image:DotNetCore()},
-    LaTeX: {name: "LaTeX", image:LaTeX()},
-    Mathematica: {name: "Mathamatica", image:Mathematica()},
-    PSPP: {name: "PSPP", image:PSPP()},
-    MatLab: {name: "MatLab", image:MatLab()},
-    Geogabra: {name: "Geogabra", image:Geogabra()},
-    GoLang: {name: "GoLang", image:GoLang()},
-    Thymeleaf: {name: "Thymeleaf", image:Thymeleaf()},
-    Docker: {name: "Docker", image:Docker()},
+    JavaScript: {subtitle: "JavaScript", image:JavaScript()},
+    HTML5: {subtitle: "HTML 5", image:HTML5()},
+    JQuery: {subtitle: "jQuery", image:JQuery()},
+    VueJS: {subtitle: "VueJS", image:Vue()},
+    GoogleTagManager: {subtitle: "GTM", tooltip: "Google Tag Manager", image:GoogleTagManager()},
+    DynamoDB: {subtitle: "DynamoDB", image:DynamoDB()},
+    ReactJs: {subtitle: "ReactJS", image:React()},
+    TypeScript: {subtitle: "TypeScript", image:TypeScript()},
+    Telerik: {subtitle: "KendoUI", image:Telerik()},
+    DotNetCore: {subtitle: ".NET Core", image:DotNetCore()},
+    LaTeX: {subtitle: "LaTeX", image:LaTeX()},
+    Mathematica: {subtitle: "Mathamatica", tooltip: "Wolfram Mathematica", image:Mathematica()},
+    PSPP: {subtitle: "PSPP", image:PSPP()},
+    MatLab: {subtitle: "MatLab", image:MatLab()},
+    Geogabra: {subtitle: "Geogabra", image:Geogabra()},
+    GoLang: {subtitle: "GoLang", image:GoLang()},
+    Thymeleaf: {subtitle: "Thymeleaf", image:Thymeleaf()},
+    Docker: {subtitle: "Docker", image:Docker()},
 }
-
+const decorations = {
+    MathAndPhysicsClubPresident: {title: "President (2019-2020)", subtitle: "Math and Physics Club", image:MathAndPhysicsClub()},
+    SigmaZetaPresident: {title: "President (2020)", subtitle: "ΣΖ Honor Society", tooltip: "Sigma Zeta Honor Society Beta-Phi Chapter", link:"", image:SigmaZeta()},
+    MajorFieldExam: {title: "189/200", subtitle: "Major Field Exam", tooltip: "Major Field Exam for Mathematics", link:"", image:EducationalTestingService()},
+}
 const descriptions = {
     skills: {
         front: "Here are some of the skills I have accumulated over the years.",
@@ -221,6 +228,25 @@ const experiences = [
         ]
     }
 ]
-
-const data = {experiences, descriptions, urls}
+const school = {
+    degree: "Bachelor's Degree",
+    majors: ["Mathematics & Computer Science"],
+    description: <>
+        <ul>
+            <li>Received a liberal arts degree. Has proficiency in the arts, including expressing oneself orally and through composition.</li>
+            <li>Earned a major in Computer Science. Has a vast experience with computer systems and programming with both higher-level and lower-level languages.</li>
+            <li>Acquired a second major in Mathematics. Has the ability to solve complex problems through computational analysis, including but not limited to problems involving: Trigonometry, Calculus, Number Theory, Physics, and Statistics.</li>
+        </ul>
+    </>,
+    institution: "College of the Ozarks",
+    location: "Point Lookout, Missouri",
+    startDate: new Date(2015, 8),
+    endDate: new Date(2020, 5),
+    skills: [
+        decorations.MajorFieldExam,
+        decorations.MathAndPhysicsClubPresident,
+        decorations.SigmaZetaPresident,
+    ],
+}
+const data = {experiences, descriptions, urls, school}
 export default data;

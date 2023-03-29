@@ -34,6 +34,7 @@
         text-align: left;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
     }
 
     .description {
@@ -74,9 +75,6 @@
     h4 {
         font-weight: normal;
         font-size: 1.2em;
-    }
-    .skillsSpacer {
-        height: 100%;
     }
 
     td:nth-of-type(odd) {

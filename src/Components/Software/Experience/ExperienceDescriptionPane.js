@@ -7,13 +7,12 @@ function ExperienceDescriptionPane(props) {
             {props.jobTitle ?       
                 <>
                     <h2>{props.jobTitle}</h2>
-                    <h4>{props.employer} - {(props.duration)}</h4>
+                    <h4>{props.employer} - {props.duration}</h4>
 
                     <div className={styles.description}>
                         { props.description }
                     </div>
 
-                    <span className={styles.skillsSpacer}/>
                     {props.skills.length > 0 ? 
                         <>
                             <h3>Technologies:</h3>

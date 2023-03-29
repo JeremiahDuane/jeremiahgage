@@ -1,0 +1,71 @@
+.academia {
+    font-size: 1.25em;
+    .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2em;
+        justify-content: center;
+        background-color: blue;
+        > * {
+            flex: 1;
+            height: 225px;
+            width: 200px;
+            text-align: center;
+        }
+    }
+
+    .school {
+        display: flex;
+        padding-left: 3em;
+        padding-right: 3em;
+        gap: 2em;
+        @media (max-width: 700px) {
+            flex-direction: column;
+        }
+    }
+
+    .academiaDescriptionPane {
+        flex: 1;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .imagePane {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imageWrapper {
+        width: 70%;
+        @media (max-width: 700px) {
+            width: 100%;
+        }
+    }
+
+    .description {
+        width: 100%;
+        padding: 20px;
+        font-size: 1.1em;
+        li {
+            padding: 0.5em;
+        }
+    }
+
+    h2, h3, h4, h5 {
+        margin: 0px;
+        padding: 0px;
+        color: black;
+    }
+    h3 {
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+    h4 {
+        font-weight: normal;
+        font-size: 1.2em;
+    }
+}

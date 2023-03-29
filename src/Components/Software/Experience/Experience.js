@@ -29,8 +29,8 @@ function Experience(props) {
         <div className={styles.experiences}>
             <Software 
                 heading="experience"
-                demoPath="/repos/anchoredapplications/jeremiahgage/contents/src/Components/Software/About/"
-                footerPath="/blob/master/src/Components/Software/About/About.js"
+                demoPath="/repos/anchoredapplications/jeremiahgage/contents/src/Components/Software/Experience/"
+                footerPath="/blob/master/src/Components/Software/Experience/Experience.js"
                 description={props.descriptions.experience}
             >
                 <div className={styles.experience}>

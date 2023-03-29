@@ -1,17 +1,16 @@
 .skills {
     display: flex;
     flex-wrap: wrap;
-    gap: 2em;
+    gap: 1em;
     justify-content: center;
 
     > * {
         flex: 1;
-        height: 100px;
-        width: 100px;
+        max-height: 175px;
+        width: 150px;
         text-align: center;
     }
 }
-
 .skill {
     display: flex;
     flex-direction: column;

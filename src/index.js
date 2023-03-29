@@ -31,4 +31,4 @@ root.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
-console.log("v1.0.5")
+console.log("v1.0.6")
