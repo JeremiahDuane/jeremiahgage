@@ -24,9 +24,13 @@ import {
 } from "../../imgs/SVGs"
 
 const urls = {
-    wikipedia: {
+    Wikipedia: {
         SOLID: "https://simple.wikipedia.org/wiki/SOLID_(object-oriented_design)#SOLID_Principles"
-    }
+    },
+    EducationalTestingService: "https://www.ets.org/mft/about/test-content.html",
+    AssociationForComputingMachinery: "https://www.acm.org/",
+    CollegeOfTheOzarks: "https://www.cofo.edu/",
+    SigmaZeta: "https://sigmazeta.org/"
 }
 
 const skills = {
@@ -50,10 +54,10 @@ const skills = {
     Docker: {subtitle: "Docker", image:Docker()},
 }
 const decorations = {
-    MathAndPhysicsClubPresident: {title: "President", dates:"2019-2020", subtitle: "Math & Physics Club", image:MathAndPhysicsClub()},
-    SigmaZetaPresident: {title: "President", dates:"2020", subtitle: "ΣΖ Honor Society", tooltip: "Sigma Zeta Honor Society Beta-Phi Chapter", link:"", image:SigmaZeta()},
-    MajorFieldExam: {title: "189/200", dates:"2020", subtitle: "Major Field Exam", tooltip: "Major Field Exam for Mathematics", link:"", image:EducationalTestingService()},
-    AssociationForComputingMachinery: {title: "Vice-President", dates:"2018-2019", subtitle: "ACM Club", tooltip: "Association for Computing Machinery", link:"", image:AssociationForComputingMachinery()},
+    MathAndPhysicsClubPresident: {title: "President", dates:"2019-2020", subtitle: "Math & Physics Club", link:urls.CollegeOfTheOzarks, image:MathAndPhysicsClub()},
+    SigmaZetaPresident: {title: "President", dates:"2020", subtitle: "ΣΖ Honor Society", tooltip: "Sigma Zeta Honor Society Beta-Phi Chapter", link: urls.SigmaZeta, image:SigmaZeta()},
+    MajorFieldExam: {title: "189/200", dates:"2020", subtitle: "Major Field Exam", tooltip: "Major Field Exam for Mathematics", link: urls.EducationalTestingService, image:EducationalTestingService()},
+    AssociationForComputingMachinery: {title: "Vice-President", dates:"2018-2019", subtitle: "ACM Club", tooltip: "Association for Computing Machinery", link: urls.AssociationForComputingMachinery, image:AssociationForComputingMachinery()},
 }
 const descriptions = {
     skills: {
@@ -69,7 +73,7 @@ const descriptions = {
                     <h3>
                         Some would say a good software developer writes good code. I would posit that good code writes itself. 
                         Through the minimazation of redundancy by commitment to 
-                        &nbsp;<a href={urls.wikipedia.SOLID} target="_blank" rel="noreferrer" onClick={(e) => {e.stopPropagation()}}>SOLID</a>&nbsp;
+                        &nbsp;<a href={urls.Wikipedia.SOLID} target="_blank" rel="noreferrer" onClick={(e) => {e.stopPropagation()}}>SOLID</a>&nbsp;
                         priciples, and the reuse of code through component libraries, the development required by developers tends to zero. A good developer, then, can hardly be characterized
                         as a developer at all, rather, a thinker, a creator, an engineer. 
                     </h3>

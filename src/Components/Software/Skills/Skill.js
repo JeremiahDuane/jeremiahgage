@@ -1,16 +1,14 @@
 import styles from './Skills.module.scss'
 
 export default function Skill(props) {
+    const openLink = (e) => {
+        e.stopPropagation(); 
+        if (props.link) window.open(props.link)
+    }
     return (
-        <div className={styles.skill} title={props.tooltip ?? props.subtitle} onClick={(e)=>{e.stopPropagation()}}>
-            { 
-                props.link ? 
-                    ( <a href={props.link}>
-                        {props.image}
-                    </a> )    
-                : props.image
-            }   
-            <div>            
+        <div className={styles.skill} title={props.link ?? props.tooltip ?? props.subtitle} onClick={openLink}>
+            { props.image }   
+            <div title={props.tooltip}>            
                 <h3>{props.title}</h3>
                 <h5>{props.dates}</h5>
                 <div>{props.subtitle}</div>
