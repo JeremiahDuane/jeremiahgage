@@ -34,3 +34,9 @@ svg {
 .cardFace {
     flex: 1
 }
+
+.react-card-flipper, .react-card-front, .react-card-back {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}

@@ -26,28 +26,26 @@ function Experience(props) {
     }
 
     return (
-        <div className={styles.experiences}>
-            <Software 
-                heading="experience"
-                demoPath="/repos/anchoredapplications/jeremiahgage/contents/src/Components/Software/Experience/"
-                footerPath="/blob/master/src/Components/Software/Experience/Experience.js"
-                description={props.descriptions.experience}
-            >
-                <div className={styles.experience}>
-                    <ExperiencePaneList experiences={props.experiences} handleClick={handleClick}/>
-                    <ExperienceDescriptionPane 
-                        jobTitle={selectedExperience.jobTitle}
-                        jobType={selectedExperience.jobType}
-                        employer={selectedExperience.employer}
-                        displayDate={selectedExperience.displayDate}
-                        duration={selectedExperience.duration} 
-                        location={selectedExperience.location}
-                        description={selectedExperience.description}
-                        skills={selectedExperience.skills}
-                    />
-                </div>
-            </Software>
-        </div>
+        <Software 
+            heading="experience"
+            demoPath="/repos/anchoredapplications/jeremiahgage/contents/src/Components/Software/Experience/"
+            footerPath="/blob/master/src/Components/Software/Experience/Experience.js"
+            description={props.descriptions.experience}
+        >
+            <div className={styles.experiences}>
+                <ExperiencePaneList experiences={props.experiences} handleClick={handleClick}/>
+                <ExperienceDescriptionPane 
+                    jobTitle={selectedExperience.jobTitle}
+                    jobType={selectedExperience.jobType}
+                    employer={selectedExperience.employer}
+                    displayDate={selectedExperience.displayDate}
+                    duration={selectedExperience.duration} 
+                    location={selectedExperience.location}
+                    description={selectedExperience.description}
+                    skills={selectedExperience.skills}
+                />
+            </div>
+        </Software>
     );
 }
 
