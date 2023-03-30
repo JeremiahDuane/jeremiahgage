@@ -13,6 +13,8 @@
     min-width: 100%;
     min-height: 100%;
     box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1), 0 10px 10px 0 rgba(0, 0, 0, 0.1);
+    color: white;
+
 }
 
 @media (min-width: 700px) {
@@ -26,7 +28,6 @@
 
     h1 {
         font-size: 90px;
-        color: white;
         padding: 0px;
         margin: 0px;
         line-height: 90px;
@@ -34,7 +35,6 @@
 
     h2 {
         font-size: 2em;
-        color: white;    
     }
 }
 

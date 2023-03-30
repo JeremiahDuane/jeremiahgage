@@ -11,20 +11,18 @@ function Project(props) {
         backgroundPosition: "center center",
         backgroundRepeat: 'no-repeat',
         backgroundSize: '100% 100%',
-        height: '40vh', 
-        width: '40vh', 
-        textAlign: 'center', 
-        marginLeft:'12vh'
+        flex: "1",
+        textAlign: 'center'
     }
     return (
         <div className={styles.project}> 
-            <FlipCard>
-                <div className={[styles.card, styles.front].join(" ")} style={inlineStyle} >
+            <FlipCard containerClassName={styles.card}>
+                <div className={styles.front} style={inlineStyle} >
                     <h2 className={styles.heading}>    
                         {props.title}
                     </h2>
                 </div>
-                <div className={[styles.card, styles.back].join(" ")}>
+                <div className={styles.back}>
                     <h4 className={styles.summary}>    
                         {props.summary}
                     </h4>

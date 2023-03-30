@@ -21,10 +21,12 @@ class FlipCard extends React.Component {
     
     render() {
         return (
-            <ReactCardFlip isFlipped={this.state.isFlipped}>
-                <div className="cardFace" onClick={this.handleClick}>{this.props.children[0]}</div>
-                <div className="cardFace" onClick={this.handleClick}>{this.props.children[1]}</div>
-            </ReactCardFlip>
+            <div onClick={this.handleClick}>
+                <ReactCardFlip containerClassName={styles.card} isFlipped={this.state.isFlipped}>
+                    {this.props.children[0]}
+                    {this.props.children[1]}
+                </ReactCardFlip>
+            </div>
         )
     }
   }

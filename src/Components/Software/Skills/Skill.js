@@ -10,8 +10,8 @@ export default function Skill(props) {
             { props.image }   
             <div title={props.tooltip}>            
                 <h3>{props.title}</h3>
-                <h5>{props.dates}</h5>
                 <div>{props.subtitle}</div>
+                <h5>{props.dates}</h5>
             </div>     
         </div>
     );

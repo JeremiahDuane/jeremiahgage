@@ -1,59 +1,61 @@
-.project {
-    &:first-of-type{
-        padding-left: 0;
+.projects {
+    .project {
+        &:first-of-type{
+            padding-left: 0;
+        }
+        padding: 20px;
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
-    padding: 20px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
 
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.front {
-    cursor: pointer;
-}
-
-p {
-    font-size: 20px;
-    padding-top: 1vh;
-    height: 12vh;
-    @media(max-width: 700px) {
-        font-size: 18px;
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        display: flex;
     }
-    @media(max-width: 500px) {
-        font-size: 16px;
+
+    .front {
+        cursor: pointer;
+        flex: 1;
+        margin: 0;
+        padding: 0;
     }
-}
-    
-.image {
-    object-fit: cover;
-    width:  230px;
-    height: 230px;
-}
 
-.heading {
-    margin: 0;
-    padding-top: 45%;
-    text-align: center;
-    text-shadow: 2px 5px 5px black;
-    font-size: 48px;
-}
+    p {
+        font-size: 20px;
+        padding-top: 1vh;
 
-.summary {
-    padding: 26px;
-    font-size: 26px;
-}
+        @media(max-width: 700px) {
+            font-size: 18px;
+        }
+        @media(max-width: 500px) {
+            font-size: 16px;
+        }
+    }
+        
+    .image {
+        object-fit: cover;
+    }
 
-.back {
-    height: 40vh; 
-    width: 40vh;
-    display: flex;
-    text-align: 'center'; 
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 12vh;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    .heading {
+        margin: 0;
+        padding-top: 45%;
+        text-align: center;
+        text-shadow: 2px 5px 5px black;
+        font-size: 48px;
+        color: white;
+    }
+
+    .summary {
+        padding: 26px;
+        font-size: 26px;
+    }
+
+    .back {
+        display: flex;
+        text-align: 'center'; 
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
 }

@@ -70,17 +70,17 @@ const descriptions = {
     },
     about: {
         front: <>
-                    <h3>
+                    <p>
                         Some would say a good software developer writes good code. I would posit that good code writes itself. 
                         Through the minimazation of redundancy by commitment to 
                         &nbsp;<a href={urls.Wikipedia.SOLID} target="_blank" rel="noreferrer" onClick={(e) => {e.stopPropagation()}}>SOLID</a>&nbsp;
                         priciples, and the reuse of code through component libraries, the development required by developers tends to zero. A good developer, then, can hardly be characterized
                         as a developer at all, rather, a thinker, a creator, an engineer. 
-                    </h3>
+                    </p>
                     <br/>
-                    <h3>
+                    <p>
                         This portfolio is a small example of good code. Do you want to take a closer look? Click anywhere in this pane to begin. 
-                    </h3>
+                    </p>
                 </>,
         back: <>
                 <p>
@@ -165,9 +165,9 @@ const experiences = [
                 startDate: new Date(2017, 8, 1),
                 endDate: new Date(2020, 5, 1), 
                 location: "Point Lookout, MO",
-                description: <>
+                description: <p>
                     Worked as a lab assistant in the College's mathematics department. Assisted in instructing students in the areas of Calculus, Discrete Math, Trigonometry, and Statistics.
-                </>,
+                </p>,
                 skills: [
                     skills.LaTeX,
                     skills.Mathematica,
@@ -206,9 +206,9 @@ const experiences = [
                 startDate: new Date(2018, 5, 1),
                 endDate: new Date(2018, 8, 1), 
                 location: "Branson, MO",
-                description: <>
+                description: <p>
                     Worked as a sales advocate with Gateway Wireless LLC, a Cricket Wireless authorized retailer. Acted with a team and individually to advocate the Cricket brand and to perform sales. Developed connections through customer interactions to create an integrated sales network. 
-                </>,
+                </p>,
                 skills: []
             }
         ]
@@ -223,7 +223,7 @@ const experiences = [
                 endDate: new Date(2017, 8, 1), 
                 location: "Branson, MO",
                 description: <>
-                        Worked as both crew member and cashier. 
+                    <p>Worked as both crew member and cashier.</p>
                     <ul>
                         <li>Acted as a receptionist while managing the cash register. Greeted guests and took their orders. </li>
                         <li>Worked as a server by preparing food and serving it to guests. </li>

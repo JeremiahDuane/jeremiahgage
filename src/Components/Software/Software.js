@@ -5,8 +5,8 @@ import GitHubCodeDemo from './GitHubCodeDemo/GitHubCodeDemo';
 
 function Software(props) {
     return (
-        <div className={styles.card}>
-            <FlipCard> 
+        <div className={styles.software}>
+            <FlipCard class={"software"}> 
                 <div className={[styles.cardFace, styles.front].join(" ")}>
                     <h1 className={styles.heading}>
                         {props.heading}

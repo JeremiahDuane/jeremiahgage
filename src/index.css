@@ -30,3 +30,7 @@ code {
 svg {
     filter: drop-shadow(2px 2px 2px rgb(0 0 0 / 0.4));
 }
+
+.cardFace {
+    flex: 1
+}

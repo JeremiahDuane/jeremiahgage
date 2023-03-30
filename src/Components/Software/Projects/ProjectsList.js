@@ -26,7 +26,7 @@ const responsive = {
 function ProjectsList(props) {
     return (
         <div className={styles.list}  onClick={(event) => {event.stopPropagation()}}>                
-            <Carousel responsive={responsive}>
+            <Carousel infinite={true} responsive={responsive}>
                 {props.projects.map((project, idx) => {
                     return <Project key={idx} title={project.title} image={project.image} summary={project.summary}/>
                 })}
