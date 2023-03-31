@@ -47,6 +47,13 @@ nav ul {
     }
 }
 
+.footerWrapper {
+    height: 100px;
+    background-color: #000000db;
+    box-shadow: 1px 7px 5px 10px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
 @media (min-width: 700px) {
     nav li a {
         border-radius: 100%;

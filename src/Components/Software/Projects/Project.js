@@ -11,9 +11,8 @@ function Project(props) {
         backgroundPosition: "center center",
         backgroundRepeat: 'no-repeat',
         backgroundSize: '100% 100%',
-        flex: "1",
-        textAlign: 'center'
     }
+    
     return (
         <div className={styles.project}> 
             <FlipCard>

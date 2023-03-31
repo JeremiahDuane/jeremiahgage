@@ -35,6 +35,9 @@ function SinglePageNav(props) {
                 </section>
             })}
             </div>
+            <div className={styles.footerWrapper}>
+                {props.footer}
+            </div>
         </>
     );
 }

@@ -6,18 +6,18 @@ function ExperiencePane(props) {
     const startDate = FormatDateTimeAsString(props.startDate);
     const endDate = props.endDate ? FormatDateTimeAsString(props.endDate) : 'Present';
     const duration = props.endDate ? FormatDurationAsString(props.startDate, props.endDate) : FormatDurationAsString(props.startDate, new Date())
+    const experience = {
+        jobTitle: props.title, 
+        jobType: props.jobType,
+        employer: props.employer,
+        displayDate: `${startDate} - ${endDate}`,
+        duration: duration, 
+        location: props.location,
+        description: props.description,
+        skills: props.skills
+    }
     const emitDescription = (event) => {
         event.stopPropagation(); 
-        const experience = {
-            jobTitle: props.title, 
-            jobType: props.jobType,
-            employer: props.employer,
-            displayDate: `${startDate} - ${endDate}`,
-            duration: duration, 
-            location: props.location,
-            description: props.description,
-            skills: props.skills
-        }
         props.handleClick(experience)
     }
 

@@ -15,7 +15,7 @@ function Experience(props) {
         description: null,
         skills: []
     }
-    const [selectedExperience, setSelectedExperience] = useState(nullExperience);
+    var [selectedExperience, setSelectedExperience] = useState(nullExperience);
     const handleClick = (value) => {
         if (value.jobTitle !== selectedExperience.jobTitle) {
             setSelectedExperience(nullExperience);
@@ -34,7 +34,7 @@ function Experience(props) {
         >
             <div className={styles.experiences}>
                 <ExperiencePaneList experiences={props.experiences} handleClick={handleClick}/>
-                <ExperienceDescriptionPane 
+                <ExperienceDescriptionPane handleClose={() => {handleClick(nullExperience)}}
                     jobTitle={selectedExperience.jobTitle}
                     jobType={selectedExperience.jobType}
                     employer={selectedExperience.employer}
