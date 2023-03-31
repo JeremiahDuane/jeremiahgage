@@ -1,5 +1,8 @@
 .software {
-    height: 100%;
+    text-align: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
     h2, h3, h4, h5 {
         margin: 0px;
         padding: 0px;
@@ -29,29 +32,20 @@ li {
 }
 
 /* Clear floats after the columns */
-
-.cardFace{
-    text-align: center;
-    // padding-top: 3em;
-    // padding-bottom: 3em;
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    height: 100%;
-    @media (max-width: 700px) {
-        padding: 1em;
-    }
-}
-
 .heading {
     padding-top: .5em;
     padding-bottom: .5em;
 }
 
 .front {
+    display: flex;
+    flex-direction: column;
     flex: 1;
     .heading{
         color:#04151a;
+    }
+    .content {
+        height: 100%;
     }
     a {
         background: linear-gradient(to right, #ffbb00 0%, #dd4c4f 100%);
@@ -71,12 +65,13 @@ li {
 
 .back {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    flex: 1;
     background-color: #04151a;
     background-image: url("../../imgs/Circuit.svg");
     background-size: cover;
     color: white;
+    flex: 1;
     .heading{
         color:white;
     }

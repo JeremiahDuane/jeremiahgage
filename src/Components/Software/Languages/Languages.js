@@ -1,5 +1,6 @@
 import LanguagesList from './LanguagesList';
 import Software from '../Software';
+import styles from './LanguagesList.module.scss'
 
 function Languages(props) {
     return (
@@ -9,7 +10,9 @@ function Languages(props) {
             footerPath="/blob/master/src/Components/Software/Languages/Languages.js"
             description={props.descriptions.skills}
         >
-            <LanguagesList languages={props.languages}/>
+            <div className={styles.languages}>
+                <LanguagesList languages={props.languages}/>
+            </div>
         </Software>
     );
 }

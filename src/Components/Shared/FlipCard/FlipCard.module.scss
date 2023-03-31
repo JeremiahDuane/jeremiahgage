@@ -1,35 +1,3 @@
-.flipCardOuter {
-    height: 100%;
-
-    .flipCardInner {
-        transform-style: preserve-3d;
-        transition: .5s linear .1s;
-        position: relative;
-        width: inherit;
-        height: 100%;
-
-        &.showBack {
-            transform: rotateY(180deg);
-        }
-        
-        .card {
-            backface-visibility: hidden;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            &.front {
-                transform: rotateY(0);
-                z-index: 1;
-                height: 100%;
-            }
-        
-            &.back {
-                position: absolute;
-                transform: rotateY(180deg);
-                z-index: 0;
-                height: 100%;
-            }
-        }
-    }
+.wrapper {
+    flex: 1;
 }

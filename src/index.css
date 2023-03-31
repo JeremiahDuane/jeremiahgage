@@ -30,12 +30,8 @@ code {
 svg {
     filter: drop-shadow(2px 2px 2px rgb(0 0 0 / 0.4));
 }
-
-.cardFace {
-    flex: 1
-}
-
-.react-card-flipper, .react-card-front, .react-card-back {
+.react-card-flip, .react-card-flipper, .react-card-front, .react-card-back {
+  height: 100%;
   display: flex;
   flex: 1;
   flex-direction: column;

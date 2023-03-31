@@ -62,18 +62,18 @@ function navHighlighter() {
 }
 
 function alignFrontAndBackOfCards() {
-    document.querySelectorAll(".software").forEach(el => {
-        let front = el.firstChild.firstChild.children[0].firstChild;
-        let back = el.firstChild.firstChild.children[1].firstChild;
+    const sections = document.querySelectorAll("section");
 
-        if (front && back) {
-            let heights = []
-            heights.push(Number(front.offsetHeight), Number(back.offsetHeight));
-
-            let maxHeight = Math.max( ...heights );
-            front.setAttribute("style", `height: ${maxHeight}px;`)
-            back.setAttribute("style", `height: ${maxHeight}px;`)
-        }
+    sections.forEach(section => {
+        section.setAttribute("style", ``)
+    })
+    sections.forEach(section => {
+        let heights = []
+        section.querySelectorAll("*").forEach(descandant => {
+            heights.push(descandant.offsetHeight? Number(descandant.offsetHeight) : 0)
+        })
+        const maxHeight = Math.max( ...heights );
+        section.setAttribute("style", `height: ${maxHeight}px;`)
     })
 }
 

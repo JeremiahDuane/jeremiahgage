@@ -19,10 +19,10 @@ class FlipCard extends React.Component {
 
     render() {
         return (
-            <div onClick={this.handleClick}>
-                <ReactCardFlip containerClassName={styles.card} isFlipped={this.state.isFlipped}>
-                  <div ref={this.front}>{this.props.children[0]}</div>
-                  <div ref={this.back}>{this.props.children[1]}</div>
+            <div className={styles.wrapper} onClick={this.handleClick}>
+                <ReactCardFlip isFlipped={this.state.isFlipped}>
+                  {this.props.children[0]}
+                  {this.props.children[1]}
                 </ReactCardFlip>
             </div>
         )

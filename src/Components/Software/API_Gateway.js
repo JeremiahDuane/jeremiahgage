@@ -110,7 +110,7 @@ function GitHub() {
         }
 
         load();
-    
+        
         return () => {
           // here we cancel the previous in-flight, unfinished http request
           cancelTokenSource.cancel(

@@ -1,4 +1,12 @@
 .about {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 15%;
+    padding-top: 0%;
+    
     .a {
         font-size: 72px;
         background: -webkit-linear-gradient(#ff0000, #fffb00);
@@ -7,8 +15,9 @@
     }
     
     p {
+        flex: 1;
         margin: 0;
-        font-size: 1em;
+        font-size: 1.5em;
         @media (max-width: 700px) {
             font-size: 18px;
         }

@@ -5,8 +5,8 @@ function AcademiaDescriptionPane(props) {
     return (
         <div className={styles.academiaDescriptionPane}>
             <h2>{props.degree}</h2>
-            {props.majors.map((major) => {
-                return <h4>{major}</h4>
+            {props.majors.map((major, idx) => {
+                return <h4 key={idx}>{major}</h4>
             })}
 
             <div className={styles.description}>

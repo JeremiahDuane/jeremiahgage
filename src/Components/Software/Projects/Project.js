@@ -16,7 +16,7 @@ function Project(props) {
     }
     return (
         <div className={styles.project}> 
-            <FlipCard containerClassName={styles.card}>
+            <FlipCard>
                 <div className={styles.front} style={inlineStyle} >
                     <h2 className={styles.heading}>    
                         {props.title}
