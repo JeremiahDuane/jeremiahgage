@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import axios, { CancelToken } from "axios";
-import cfg from '../config';
+import data from './data';
 import { Octokit } from "octokit";
 
 function GitHub() {
@@ -28,11 +28,11 @@ function GitHub() {
                 
                 const path = '/users/anchoredapplications/repos';
                 const octokit = new Octokit({
-                    auth: cfg.github.api_auth
+                    auth: process.env.GITHUB_AUTH
                 });
 
                 if (cacheExists && timeCacheHasNotExpired) {
-                    const response = await cache.match(cfg.github.api_url + path);
+                    const response = await cache.match(data.urls.GitHub.api + path);
                     const body = await response.json()
 
                     const arrayProjects = [];
@@ -63,10 +63,10 @@ function GitHub() {
                         }         
                     });                           
                 } else {
-                    const response = await octokit.request(cfg.github.api_url + path);
+                    const response = await octokit.request(data.urls.GitHub.api + path);
                     const body = response.data;
                     
-                    cache.add(cfg.github.api_url + path);
+                    cache.add(data.urls.GitHub.api + path);
                     cache.put('/time-cached', new Response( Date.now()));
                     
                     const arrayProjects = [];

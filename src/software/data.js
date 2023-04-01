@@ -30,7 +30,12 @@ const urls = {
     EducationalTestingService: "https://www.ets.org/mft/about/test-content.html",
     AssociationForComputingMachinery: "https://www.acm.org/",
     CollegeOfTheOzarks: "https://www.cofo.edu/",
-    SigmaZeta: "https://sigmazeta.org/"
+    SigmaZeta: "https://sigmazeta.org/",
+    GitHub: {
+        site: "https://github.com/anchoredapplications/jeremiahgage",
+        api: "https://api.github.com",
+        auth: ""
+    },
 }
 
 const skills = {

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Octokit } from "octokit";
 import axios, { CancelToken } from "axios";
 import styles from './GitHubCodeDemo.module.scss'
-import cfg from '../../../config';
+import data from '../../data';
 import TabGroup from '../TabGroup/TabGroup';
 
 function GitHubCodeDemo(props) {
@@ -27,11 +27,11 @@ function GitHubCodeDemo(props) {
                 
                 const retVal = [];
                 const octokit = new Octokit({
-                    auth: cfg.github.api_auth
+                    auth: process.env.GITHUB_AUTH
                 });
                 
                 if (cacheExists && timeCacheHasNotExpired) {
-                    const response  = await cache.match(cfg.github.api_url + props.path);                    
+                    const response  = await cache.match(data.urls.GitHub.api + props.path);                    
                     const body = await response.json()
                     body.forEach(async el => {
                         const r = await cache.match(el.url);
@@ -40,7 +40,7 @@ function GitHubCodeDemo(props) {
                         setRefresh(val => val + 1);
                     });
                 } else {
-                    const response = await octokit.request(cfg.github.api_url + props.path);
+                    const response = await octokit.request(data.urls.GitHub.api + props.path);
                     const body = response.data
                     body.forEach(async el => {
                         cache.add(el.url);
@@ -49,7 +49,7 @@ function GitHubCodeDemo(props) {
                         setRefresh(val => val + 1);
                     });
                     cache.put('/time-cached', new Response( Date.now()));
-                    cache.add(cfg.github.api_url + props.path);
+                    cache.add(data.urls.GitHub.api + props.path);
                 }
                 setDocuments(retVal);
             } catch (err) {
