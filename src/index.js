@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Software from './Components/Software/App';
-import Nav from './Components/Home/App';
-import Food from './Components/Food/App';
-import reportWebVitals from './Components/Test/reportWebVitals';
+import Section from './software/App';
+import reportWebVitals from './test/reportWebVitals';
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,13 +12,9 @@ root.render(
             <Routes>
                 <Route 
                     path="/" 
-                    element={<Software />}   
+                    element={<Section/>}   
                 />                
-                <Route 
-                    path="food/" 
-                    element={<Food />}   
-                />
-                <Route path="*" element={<Software />} />
+                <Route path="*" element={<Section/>} />
             </Routes>
         </BrowserRouter>
     </React.StrictMode>
