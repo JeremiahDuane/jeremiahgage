@@ -28,8 +28,8 @@ function Experience(props) {
     return (
         <Section
             heading="experience"
-            demoPath="/repos/anchoredapplications/jeremiahgage/contents/src/Components/Software/Experience/"
-            footerPath="/blob/master/src/Components/Software/Experience/Experience.js"
+            demoPath="/repos/anchoredapplications/jeremiahgage/contents/src/software/components/sections/Experience/"
+            footerPath="/blob/master/src/software/components/sections/Experience/Experience.js"
             description={props.descriptions.experience}
         >
             <div className={styles.experiences}>

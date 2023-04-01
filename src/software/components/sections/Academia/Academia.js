@@ -9,8 +9,8 @@ function Academia(props) {
     return (
         <Section
             heading="academia"
-            demoPath="/repos/anchoredapplications/jeremiahgage/contents/src/Components/Software/Academia/"
-            footerPath="/blob/master/src/Components/Software/Academia/Academia.js"
+            demoPath="/repos/anchoredapplications/jeremiahgage/contents/src/software/components/sections/Academia/"
+            footerPath="/blob/master/src/software/components/sections/Academia/Academia.js"
             description={props.descriptions.experience}
         >
             <div className={styles.academia}>

@@ -6,8 +6,8 @@ function Projects(props) {
     return (
         <Section
             heading="projects"
-            demoPath="/repos/anchoredapplications/jeremiahgage/contents/src/Components/Software/Projects/"
-            footerPath="/blob/master/src/Components/Software/Projects/Projects.js"
+            demoPath="/repos/anchoredapplications/jeremiahgage/contents/src/software/components/sections/Projects/"
+            footerPath="/blob/master/src/software/components/sections/Projects/Projects.js"
             description={props.descriptions.skills}
         >
             <div className={styles.projects}>

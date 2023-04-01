@@ -6,8 +6,8 @@ function Languages(props) {
     return (
         <Section
             heading="languages"
-            demoPath="/repos/anchoredapplications/jeremiahgage/contents/src/Components/Software/Languages/"
-            footerPath="/blob/master/src/Components/Software/Languages/Languages.js"
+            demoPath="/repos/anchoredapplications/jeremiahgage/contents/src/software/components/sections/Languages/"
+            footerPath="/blob/master/src/software/components/sections/Languages/Languages.js"
             description={props.descriptions.skills}
         >
             <div className={styles.languages}>

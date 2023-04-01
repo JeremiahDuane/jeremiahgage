@@ -5,8 +5,8 @@ export default function About(props) {
     return (
         <Section 
             heading="about"
-            demoPath="/repos/anchoredapplications/jeremiahgage/contents/src/Components/Software/About/"
-            footerPath="/blob/master/src/Components/Software/About/About.js"
+            demoPath="/repos/anchoredapplications/jeremiahgage/contents/src/software/components/sections/About/"
+            footerPath="/blob/master/src/software/components/sections/About/About.js"
             description={props.descriptions.about}
         >
             <div className={styles.about}>

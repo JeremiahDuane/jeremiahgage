@@ -36,8 +36,8 @@ export default function Contact(props) {
     return (
         <Section
             heading="contact"
-            demoPath="/repos/anchoredapplications/jeremiahgage/contents/src/Components/Software/Contact/"
-            footerPath="/blob/master/src/Components/Software/Academia/Contact.js"
+            demoPath="/repos/anchoredapplications/jeremiahgage/contents/src/software/components/sections/Contact/"
+            footerPath="/blob/master/src/software/components/sections/Academia/Contact.js"
             description={props.descriptions.contact}
         >
             <div className={styles.contact} onClick={(e)=>{e.stopPropagation()}}>
