@@ -2,7 +2,8 @@ import { useRef, useState } from 'react';
 import Section from '../../Section';
 import styles from './Contact.module.scss'
 import ReCAPTCHA from "react-google-recaptcha";
-
+import axios from 'axios';
+import data from '../../../data';
 require('dotenv').config()
 
 export default function Contact(props) {
@@ -13,6 +14,7 @@ export default function Contact(props) {
             message: message
         }
     }
+
     const refName = useRef()
     const refEmail = useRef()
     const refMessage = useRef()
@@ -20,6 +22,7 @@ export default function Contact(props) {
 
     const [payload, setPayload] = useState(getPayload("", "", ""))
     const [wasSubmit, setWasSubmit] = useState(false)
+    const [statusMessage, setStatusMessage] = useState("")
 
     const nameIsValid = payload.name.length > 1 
     const emailIsValid = payload.email.length > 1 && payload.email.indexOf('@') > 1
@@ -32,8 +35,15 @@ export default function Contact(props) {
     const handleSubmit = async() => {
         setWasSubmit(true)
         if (nameIsValid && emailIsValid && messageIsValid) {
-            const token = await refReCaptcha.current.executeAsync()
-            console.log("sent", payload, token)
+            const recaptcha = await refReCaptcha.current.executeAsync()
+            axios.post(`${data.urls.local.host}${data.urls.local.contact}`, {email: payload, token: recaptcha})
+            .then((response) => {
+                if (response.status === 201) {
+                    setStatusMessage(<label className={styles.status}><i>{response.data.message}</i></label>)
+                } else {
+                    setStatusMessage(<label className={[styles.error, styles.status].join(" ")}><i>{response.data.message}</i></label>)
+                }
+            })
             setPayload(getPayload("", "", ""))
             setWasSubmit(false)
             refReCaptcha.current.reset()
@@ -61,8 +71,8 @@ export default function Contact(props) {
                     <textarea ref={refMessage} className={[styles.shadowed, styles.rounded, wasSubmit && !messageIsValid ? styles.invalid : ""].join(" ")}  onChange={handleChange} value={payload.message}/>
                 </div>    
                 <div className={styles.group}>
-                    <br/>
                     <ReCAPTCHA sitekey={process.env.REACT_APP_GOOGLE_RECAPTCHA_SITE_KEY} ref={refReCaptcha} size="invisible"/>
+                    {statusMessage}
                     <button onClick={handleSubmit} disabled={wasSubmit && (!messageIsValid || !emailIsValid || !nameIsValid)} className={[styles.submit, styles.field, styles.shadowed, styles.rounded].join(" ")}>Send</button>
                 </div>
             </div>

@@ -36,8 +36,11 @@ const urls = {
         api: "https://api.github.com",
         auth: ""
     },
+    local: {
+        host: "http://localhost:8000",
+        contact: "/api/email/send"
+    }
 }
-
 const skills = {
     JavaScript: {subtitle: "JavaScript", image:JavaScript()},
     HTML5: {subtitle: "HTML 5", image:HTML5()},
@@ -268,5 +271,6 @@ const school = {
         decorations.AssociationForComputingMachinery
     ],
 }
+
 const data = {experiences, descriptions, urls, school}
 export default data;

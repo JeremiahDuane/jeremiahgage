@@ -24,7 +24,13 @@
     }
     label {
         padding-left: 10px;
+    }
+    .error {
         color: red;
+    }
+    .status {
+        padding: 10px;
+        align-self: end;
     }
     .group {
         display: flex;
