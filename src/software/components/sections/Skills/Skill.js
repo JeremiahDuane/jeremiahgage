@@ -7,7 +7,8 @@ export default function Skill(props) {
     }
     return (
         <div className={styles.skill} title={props.link ?? props.tooltip ?? props.subtitle} onClick={openLink}>
-            { props.image }   
+            {/* This renders an SVG from a string. This is safe in our use case, because the strings are strictly controlled.*/}
+            <div dangerouslySetInnerHTML={{ __html: props.image }} /> 
             <div title={props.tooltip}>            
                 <h3>{props.title}</h3>
                 <div>{props.subtitle}</div>

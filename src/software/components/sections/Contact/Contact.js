@@ -36,7 +36,7 @@ export default function Contact(props) {
         setWasSubmit(true)
         if (nameIsValid && emailIsValid && messageIsValid) {
             const recaptcha = await refReCaptcha.current.executeAsync()
-            axios.post(`${data.urls.local.host}${data.urls.local.contact}`, {email: payload, token: recaptcha})
+            axios.post(`${process.env.REACT_APP_LOCAL_API_HOSTNAME}${process.env.REACT_APP_LOCAL_API_CONTACT}`, {email: payload, token: recaptcha})
             .then((response) => {
                 if (response.status === 201) {
                     setStatusMessage(<label className={styles.status}><i>{response.data.message}</i></label>)

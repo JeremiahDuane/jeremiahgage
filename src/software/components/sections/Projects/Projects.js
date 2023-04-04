@@ -11,7 +11,7 @@ function Projects(props) {
             description={props.descriptions.skills}
         >
             <div className={styles.projects}>
-                <ProjectsList projects={props.projects}/>
+                <ProjectsList/>
             </div>
         </Section>
     );

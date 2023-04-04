@@ -11,7 +11,7 @@ function Languages(props) {
             description={props.descriptions.skills}
         >
             <div className={styles.languages}>
-                <LanguagesList languages={props.languages}/>
+                <LanguagesList/>
             </div>
         </Section>
     );

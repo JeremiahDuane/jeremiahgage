@@ -2,64 +2,28 @@ import { useEffect, useState } from 'react'
 import { Octokit } from "octokit";
 import axios, { CancelToken } from "axios";
 import styles from './GitHubCodeDemo.module.scss'
-import data from '../../data';
 import TabGroup from '../TabGroup/TabGroup';
 
 function GitHubCodeDemo(props) {
     const [documents, setDocuments] = useState([]);
-    var [refresh, setRefresh] = useState(0);
 
     var isActive = false;
     useEffect(() => {
         const cancelTokenSource = CancelToken.source();
     
-        async function loadCode() {
+        const load = async () => {
             try {
-                //check to see if the cache exists
-                const cacheName = 'github_documents';
-                const cacheExists = await caches.has(cacheName);
-                const cache = await caches.open(cacheName);
-                
-                //check to see if the cache has expired 
-                const timeCache = await caches.match("/time-cached");
-                const timeCached = timeCache ? await timeCache.json() : false;
-                const timeCacheHasNotExpired = timeCached && timeCached > (Date.now() - 60*60*1000);
-                
-                const retVal = [];
-                const octokit = new Octokit({
-                    auth: process.env.GITHUB_AUTH
-                });
-                
-                if (cacheExists && timeCacheHasNotExpired) {
-                    const response  = await cache.match(data.urls.GitHub.api + props.path);                    
-                    const body = await response.json()
-                    body.forEach(async el => {
-                        const r = await cache.match(el.url);
-                        const document = await r.json();
-                        retVal.push({title: el.name, document: Buffer.from(document.content, 'base64').toString('ascii')});
-                        setRefresh(val => val + 1);
-                    });
-                } else {
-                    const response = await octokit.request(data.urls.GitHub.api + props.path);
-                    const body = response.data
-                    body.forEach(async el => {
-                        cache.add(el.url);
-                        const document = await octokit.request(el.url);
-                        retVal.push({title: el.name, document: Buffer.from(document.data.content, 'base64').toString('ascii')});
-                        setRefresh(val => val + 1);
-                    });
-                    cache.put('/time-cached', new Response( Date.now()));
-                    cache.add(data.urls.GitHub.api + props.path);
-                }
-                setDocuments(retVal);
+               let documents = await axios.post(`${process.env.REACT_APP_LOCAL_API_HOSTNAME}${process.env.REACT_APP_LOCAL_API_DOCUMENTS}`, { path: props.path})
+               setDocuments(documents.data.value)
             } catch (err) {
                 if (axios.isCancel(err)) {
-                  return console.info(err);
+                    return console.info(err);
                 }
+                console.error(err);
             }
         }
-    
-        loadCode();
+
+        load();
     
         return () => {
           // here we cancel the previous in-flight, unfinished http request

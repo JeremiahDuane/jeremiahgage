@@ -7,13 +7,22 @@ const octokit = new Octokit({
 const GITHUB_REPOSITORIES = { value: [], dateUpdated: null }
 const GITHUB_PROJECTS = { value: [], dateUpdated: null }
 const GITHUB_LANGUAGES = { value: [], dateUpdated: null }
+const GITHUB_DOCUMENTS = { value: [], dateUpdated: null }
 
 function StateIsValid(state) {
     var stateIsNotNull = !!state
-    const ONE_HOUR = 5 * 60 * 1000
+    const ONE_HOUR = 60 * 60 * 1000
     var stateIsNotOutdated = ((new Date()) - state.dateUpdated) < ONE_HOUR
 
     return stateIsNotNull && stateIsNotOutdated
+}
+
+function StateContainsValue(state, keyValue) {
+    for (let item of state.value) {
+        if (item.key == keyValue) return item
+    }
+
+    return null
 }
 
 async function GetGitHubRepositories() {
@@ -37,8 +46,31 @@ async function GetGitHubLanguages() {
     return GITHUB_LANGUAGES
 }
 
+async function GetGitHubDocumentsByDocument(documentPath) {
+    if (!StateIsValid(GITHUB_DOCUMENTS) || !StateContainsValue(GITHUB_DOCUMENTS, documentPath)) {
+        await LoadGitHubDocumentsByDocument(documentPath) 
+    }    
+
+    return StateContainsValue(GITHUB_DOCUMENTS, documentPath)
+}
+
+async function LoadGitHubDocumentsByDocument(documentPath) {
+    const response = await octokit.request(process.env.REACT_APP_GITHUB_API_URL + documentPath);
+    
+    const documents = []
+    for (let file of response.data) {
+        const document = await octokit.request(file.url);
+        documents.push({title: file.name, document: Buffer.from(document.data.content, 'base64').toString('ascii')});
+    }
+
+    GITHUB_DOCUMENTS.value.push({ key: documentPath, value: documents})
+    GITHUB_DOCUMENTS.dateUpdated = new Date()
+
+    return response.status;
+}
+
 async function LoadGitHubRepositories() {
-    const response = await octokit.request(process.env.GITHUB_API_URL + process.env.GITHUB_API_REPOS_URL)
+    const response = await octokit.request(process.env.REACT_APP_GITHUB_API_URL + process.env.GITHUB_API_REPOS_URL)
     const repositories = response.data
     
     GITHUB_REPOSITORIES.value = repositories
@@ -107,4 +139,10 @@ async function GitHubProjects(request, response) {
     response.json(projects)
 }
 
-module.exports = { GitHubLanguages, GitHubProjects };
+async function GitHubDocumentsByDocument(request, response) {
+    const documentPath = request.body.path
+    const projects = await GetGitHubDocumentsByDocument(documentPath)
+    response.json(projects)
+}
+
+module.exports = { GitHubLanguages, GitHubProjects, GitHubDocumentsByDocument};

@@ -9,9 +9,8 @@ function AcademiaDescriptionPane(props) {
                 return <h4 key={idx}>{major}</h4>
             })}
 
-            <div className={styles.description}>
-                { props.description }
-            </div>
+            {/* This renders an SVG from a string. This is safe in our use case, because the strings are strictly controlled.*/}
+            <div className={styles.description} dangerouslySetInnerHTML={{ __html: props.description }} />
 
             <div className={styles.skillsSpacer}/>
             <Skills skills={props.skills}/>

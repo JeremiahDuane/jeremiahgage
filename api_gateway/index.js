@@ -10,7 +10,10 @@ const app = express();
 app.use(cors())
 app.use(express.json())
 
-routing.forEach(({route, handler}) => {
+routing.GET.forEach(({route, handler}) => {
+    app.get(route, handler);
+});
+routing.POST.forEach(({route, handler}) => {
     app.post(route, handler);
 });
 
