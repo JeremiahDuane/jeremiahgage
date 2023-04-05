@@ -3,7 +3,6 @@ import Section from '../../Section';
 import styles from './Contact.module.scss'
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from 'axios';
-import data from '../../../data';
 require('dotenv').config()
 
 export default function Contact(props) {
@@ -38,6 +37,7 @@ export default function Contact(props) {
             const recaptcha = await refReCaptcha.current.executeAsync()
             axios.post(`${process.env.REACT_APP_LOCAL_API_HOSTNAME}${process.env.REACT_APP_LOCAL_API_CONTACT}`, {email: payload, token: recaptcha})
             .then((response) => {
+                console.log("sent", response.status)
                 if (response.status === 201) {
                     setStatusMessage(<label className={styles.status}><i>{response.data.message}</i></label>)
                 } else {
