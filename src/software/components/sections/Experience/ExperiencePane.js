@@ -3,9 +3,11 @@ import styles from "./Experience.module.scss"
 import {FormatDateTimeAsString, FormatDurationAsString} from '../../../system'
 
 function ExperiencePane(props) {
-    const startDate = FormatDateTimeAsString(props.startDate);
-    const endDate = props.endDate ? FormatDateTimeAsString(props.endDate) : 'Present';
-    const duration = props.endDate ? FormatDurationAsString(props.startDate, props.endDate) : FormatDurationAsString(props.startDate, new Date())
+    const start = new Date(props.startDate)
+    const end = new Date(props.endDate)
+    const startDate = FormatDateTimeAsString(start);
+    const endDate = props.endDate ? FormatDateTimeAsString(end) : 'Present';
+    const duration = props.endDate ? FormatDurationAsString(start, end) : FormatDurationAsString(start, new Date())
     const experience = {
         jobTitle: props.title, 
         jobType: props.jobType,

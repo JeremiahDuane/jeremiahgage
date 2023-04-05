@@ -3,7 +3,7 @@ import FlipCard from '../../shared/components/FlipCard/FlipCard'
 import GitHubFooter from './GitHubFooter/GitHubFooter';
 import GitHubCodeDemo from './GitHubCodeDemo/GitHubCodeDemo';
 
-function Software(props) {
+function Section(props) {
     return (
         <div className={styles.software}>
             <FlipCard> 
@@ -35,4 +35,4 @@ function Software(props) {
 }
 
 
-export default Software;
+export default Section;

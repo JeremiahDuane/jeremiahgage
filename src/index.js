@@ -5,6 +5,8 @@ import Section from './software/App';
 import reportWebVitals from './test/reportWebVitals';
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 
+require('dotenv').config()
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
@@ -13,7 +15,11 @@ root.render(
                 <Route 
                     path="/" 
                     element={<Section/>}   
-                />                
+                />
+                <Route 
+                    path="/auth" 
+                    element={"auth"}   
+                />           
                 <Route path="*" element={<Section/>} />
             </Routes>
         </BrowserRouter>

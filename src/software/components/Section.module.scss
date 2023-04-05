@@ -34,7 +34,6 @@ li {
 /* Clear floats after the columns */
 .heading {
     padding-top: .5em;
-    padding-bottom: .5em;
 }
 
 .front {
@@ -46,6 +45,7 @@ li {
     }
     .content {
         height: 100%;
+        padding-bottom: 3em;
     }
     a {
         background: linear-gradient(to right, #ffbb00 0%, #dd4c4f 100%);

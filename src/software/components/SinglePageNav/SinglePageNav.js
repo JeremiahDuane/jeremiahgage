@@ -3,11 +3,13 @@ import styles from './SinglePageNav.module.scss'
 function SinglePageNav(props) {
     // window.addEventListener("scroll", navHighlighter);
     // const [dropDownIsActive, setDropDownIsActive] = useState(false)
-    alignFrontAndBackOfCards();
     window.addEventListener('resize', () => {
         alignFrontAndBackOfCards();
     }, true);
-
+    document.addEventListener("data-loaded", function(e) {
+        alignFrontAndBackOfCards();
+    });
+      
     return (
         <>
             {/* <div className={styles.sideBar}>
