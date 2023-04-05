@@ -47,6 +47,7 @@
     "start:frontend": "react-app-rewired start",
     "start:backend": "nodemon ./api_gateway/index.js",
     "build": "react-app-rewired build",
+    "build:backend": "nodemon ./api_gateway/index.js",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject"
   },
