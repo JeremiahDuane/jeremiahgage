@@ -1,6 +1,6 @@
 {
-  "name": "jeremiahdgage",
-  "version": "0.1.0",
+  "name": "jeremiahgage",
+  "version": "1.1.1",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -12,17 +12,14 @@
     "axios": "^0.27.2",
     "buffer": "^6.0.3",
     "buffer-browserify": "^0.2.5",
-    "cors": "^2.8.5",
     "crypto-browserify": "^3.12.0",
     "crypto-js": "^4.1.1",
     "css-select": "^5.1.0",
     "dotenv": "^16.0.3",
-    "express": "^4.18.2",
     "fs": "^0.0.1-security",
     "https": "^1.0.0",
     "https-browserify": "^1.0.0",
     "moment": "^2.29.4",
-    "nodemon": "^2.0.22",
     "octokit": "^2.0.9",
     "os-browserify": "^0.3.0",
     "path-browserify": "^1.0.1",
@@ -33,7 +30,6 @@
     "react-dom": "^18.2.0",
     "react-google-recaptcha": "^2.1.0",
     "react-multi-carousel": "^2.8.2",
-    "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.1",
     "sass": "^1.54.3",
@@ -44,10 +40,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start:frontend": "react-app-rewired start",
-    "start:backend": "nodemon ./api_gateway/index.js",
+    "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "build:backend": "nodemon ./api_gateway/index.js",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject"
   },
