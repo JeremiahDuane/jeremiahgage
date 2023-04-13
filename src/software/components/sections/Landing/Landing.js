@@ -1,5 +1,9 @@
 import { useEffect } from 'react'
 import styles from './Landing.module.scss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faFilePdf } from '@fortawesome/free-solid-svg-icons'
+import Skill from '../Skills/Skill';
 
 function Landing() {
     const maxTimes = 2;
@@ -73,6 +77,14 @@ function Landing() {
                 <h2 className={`${styles.h1} typewrite`} href="" data-period="2000" data-type='[ "I am a human.", "I am a creator.", "I am a software engineer."]'>
                     <span className="wrap"></span>
                 </h2>
+            </div>
+            <div className={styles.seeAlso}>
+                <Skill link={process.env.REACT_APP_LINKED_IN_URL}>
+                    <FontAwesomeIcon className={styles.icon} prefix={'fal'} size={'4x'} icon={faLinkedin} />
+                </Skill>
+                <Skill link={process.env.REACT_APP_RESUME_URL} >
+                    <FontAwesomeIcon className={styles.icon} prefix={'fal'} size={'4x'} icon={faFilePdf} />
+                </Skill>
             </div>
         </div>
     );

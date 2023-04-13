@@ -3,6 +3,7 @@ import { Octokit } from "octokit";
 import axios, { CancelToken } from "axios";
 import styles from './GitHubCodeDemo.module.scss'
 import TabGroup from '../TabGroup/TabGroup';
+import { DataLoadedEvent } from "../../system";
 
 function GitHubCodeDemo(props) {
     const [documents, setDocuments] = useState([]);
@@ -15,6 +16,8 @@ function GitHubCodeDemo(props) {
             try {
                let documents = await axios.post(`${process.env.REACT_APP_LOCAL_API_HOSTNAME}${process.env.REACT_APP_LOCAL_API_DOCUMENTS}`, { path: props.path})
                setDocuments(documents.data.value)
+               document.dispatchEvent(DataLoadedEvent);
+
             } catch (err) {
                 if (axios.isCancel(err)) {
                     return console.info(err);

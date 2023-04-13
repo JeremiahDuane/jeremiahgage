@@ -10,11 +10,26 @@
         url("../../../../images/cover.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    min-width: 100%;
-    min-height: 100%;
+    width: 100%;
+    height: 100vh;
     box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1), 0 10px 10px 0 rgba(0, 0, 0, 0.1);
     color: white;
 
+    .icon {
+        width: 100px;
+        opacity: 25%;
+    }
+    .seeAlso {
+        a {
+            color: inherit;   
+        }
+        display: flex;
+        position: absolute;
+        bottom: 150px;
+        width: 100%;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
 }
 
 @media (min-width: 700px) {

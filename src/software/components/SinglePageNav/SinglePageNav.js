@@ -69,6 +69,7 @@ function navHighlighter() {
 function alignFrontAndBackOfCards() {
     const sections = document.querySelectorAll("section");
 
+    sections.shift();
     sections.forEach(section => {
         section.setAttribute("style", ``)
     })
@@ -77,6 +78,7 @@ function alignFrontAndBackOfCards() {
         section.querySelectorAll("*").forEach(descandant => {
             heights.push(descandant.offsetHeight? Number(descandant.offsetHeight) : 0)
         })
+        heights.push(section.offsetHeight? Number(section.offsetHeight) : 0)
         const maxHeight = Math.max( ...heights );
         section.setAttribute("style", `height: ${maxHeight}px;`)
     })
