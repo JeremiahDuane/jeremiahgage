@@ -67,12 +67,13 @@ function navHighlighter() {
 }
 
 function alignFrontAndBackOfCards() {
-    const sections = document.querySelectorAll("section");
-
-    sections.shift();
+    var sections = document.querySelectorAll("section");
+    const sectionArr = []
     sections.forEach(section => {
         section.setAttribute("style", ``)
+        sectionArr.push(section)
     })
+    sectionArr.shift();
     sections.forEach(section => {
         let heights = []
         section.querySelectorAll("*").forEach(descandant => {

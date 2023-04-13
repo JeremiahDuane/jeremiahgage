@@ -69,14 +69,16 @@ function Landing() {
 
     return (
         <div className={styles.landing}>
-            <div className={styles.heading}>
-                <h1 className={styles.h1}>Jeremiah</h1>
-                <h1 className={styles.h1}>Gage</h1>
-                <br></br>
-                <hr></hr>
-                <h2 className={`${styles.h1} typewrite`} href="" data-period="2000" data-type='[ "I am a human.", "I am a creator.", "I am a software engineer."]'>
-                    <span className="wrap"></span>
-                </h2>
+            <div>
+                <div className={styles.heading}>
+                    <h1 className={styles.h1}>Jeremiah</h1>
+                    <h1 className={styles.h1}>Gage</h1>
+                    <br></br>
+                    <hr></hr>
+                    <h2 className={`${styles.h1} typewrite`} href="" data-period="2000" data-type='[ "I am a human.", "I am a creator.", "I am a software engineer."]'>
+                        <span className="wrap"></span>
+                    </h2>
+                </div>
             </div>
             <div className={styles.seeAlso}>
                 <Skill link={process.env.REACT_APP_LINKED_IN_URL}>
