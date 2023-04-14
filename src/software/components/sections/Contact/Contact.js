@@ -72,7 +72,7 @@ export default function Contact(props) {
                 </div>    
                 <div className={styles.group}>
                     <ReCAPTCHA sitekey={process.env.REACT_APP_GOOGLE_RECAPTCHA_SITE_KEY} ref={refReCaptcha} size="invisible"/>
-                    {statusMessage}
+                    {statusMessage}&nbsp;
                     <button onClick={handleSubmit} disabled={wasSubmit && (!messageIsValid || !emailIsValid || !subjectIsValid)} className={[styles.submit, styles.field, styles.shadowed, styles.rounded].join(" ")}>Send</button>
                 </div>
             </div>
