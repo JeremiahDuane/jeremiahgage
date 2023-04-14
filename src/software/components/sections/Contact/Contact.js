@@ -6,15 +6,15 @@ import axios from 'axios';
 require('dotenv').config()
 
 export default function Contact(props) {
-    const getPayload = (name, email, message) => {
+    const getPayload = (subject, email, message) => {
         return {
-            name: name,
+            subject: subject,
             email: email,
             message: message
         }
     }
 
-    const refName = useRef()
+    const refSubject = useRef()
     const refEmail = useRef()
     const refMessage = useRef()
     const refReCaptcha = useRef()
@@ -23,21 +23,21 @@ export default function Contact(props) {
     const [wasSubmit, setWasSubmit] = useState(false)
     const [statusMessage, setStatusMessage] = useState("")
 
-    const nameIsValid = payload.name.length > 1 
+    const subjectIsValid = payload.subject.length > 1 
     const emailIsValid = payload.email.length > 1 && payload.email.indexOf('@') > 1
     const messageIsValid = payload.message.length > 1
     
     const handleChange = () => {
-        setPayload(getPayload(refName.current.value, refEmail.current.value, refMessage.current.value))
+        setPayload(getPayload(refSubject.current.value, refEmail.current.value, refMessage.current.value))
     }
 
     const handleSubmit = async() => {
         setWasSubmit(true)
-        if (nameIsValid && emailIsValid && messageIsValid) {
+        if (subjectIsValid && emailIsValid && messageIsValid) {
             const recaptcha = await refReCaptcha.current.executeAsync()
+            console.log(`${process.env.REACT_APP_LOCAL_API_HOSTNAME}${process.env.REACT_APP_LOCAL_API_CONTACT}`)
             axios.post(`${process.env.REACT_APP_LOCAL_API_HOSTNAME}${process.env.REACT_APP_LOCAL_API_CONTACT}`, {email: payload, token: recaptcha})
             .then((response) => {
-                console.log("sent", response.status)
                 if (response.status === 201) {
                     setStatusMessage(<label className={styles.status}><i>{response.data.message}</i></label>)
                 } else {
@@ -59,12 +59,12 @@ export default function Contact(props) {
         >
             <div className={styles.contact} onClick={(e)=>{e.stopPropagation()}}>
                 <div className={styles.group}>
-                    <label>{wasSubmit && !nameIsValid ? <i>Invalid name</i> : <br/>}</label>
-                    <input ref={refName} className={[styles.field, styles.shadowed, styles.rounded, wasSubmit && !nameIsValid ? styles.invalid : ""].join(" ")} placeholder='Full name...' onChange={handleChange} value={payload.name} type="text" id="name"/>
-                </div>
-                <div className={styles.group}>
                     <label>{wasSubmit && !emailIsValid ? <i>Invalid email</i> : <br/>}</label>
                     <input ref={refEmail} className={[styles.field, styles.shadowed, styles.rounded, wasSubmit && !emailIsValid ? styles.invalid : ""].join(" ")}  placeholder='Contact email address...' onChange={handleChange} value={payload.email} type="email" id="email"/>
+                </div>
+                <div className={styles.group}>
+                    <label>{wasSubmit && !subjectIsValid ? <i>Invalid subject</i> : <br/>}</label>
+                    <input ref={refSubject} className={[styles.field, styles.shadowed, styles.rounded, wasSubmit && !subjectIsValid ? styles.invalid : ""].join(" ")} placeholder='Subject...' onChange={handleChange} value={payload.subject} type="text" id="subject"/>
                 </div>
                 <div className={styles.group}>
                     <label>{wasSubmit && !messageIsValid ? <i>Invalid message</i> : <br/>}</label>
@@ -73,7 +73,7 @@ export default function Contact(props) {
                 <div className={styles.group}>
                     <ReCAPTCHA sitekey={process.env.REACT_APP_GOOGLE_RECAPTCHA_SITE_KEY} ref={refReCaptcha} size="invisible"/>
                     {statusMessage}
-                    <button onClick={handleSubmit} disabled={wasSubmit && (!messageIsValid || !emailIsValid || !nameIsValid)} className={[styles.submit, styles.field, styles.shadowed, styles.rounded].join(" ")}>Send</button>
+                    <button onClick={handleSubmit} disabled={wasSubmit && (!messageIsValid || !emailIsValid || !subjectIsValid)} className={[styles.submit, styles.field, styles.shadowed, styles.rounded].join(" ")}>Send</button>
                 </div>
             </div>
         </Section>
